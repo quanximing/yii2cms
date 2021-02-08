@@ -8,7 +8,7 @@ kartik\date\DatePickerAsset::register($this);
 $res_image = new image();
 
 $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset']]);
-//$this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAsset']]);
+$this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAsset']]);
 ?>
 
 

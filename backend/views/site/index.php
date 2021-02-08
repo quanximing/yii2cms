@@ -5,8 +5,8 @@
 $this->title = 'My Yii Application';
 //"plugins/morris/morris.js",
 // "plugins/functions/morris-init.js",
-//$this->registerJsFile('@web/plugins/morris/morris.js',['depends'=>['backend\assets\AppAsset']]);
-//$this->registerJsFile('@web/plugins/functions/morris-init.js',['depends'=>['backend\assets\AppAsset']]);
+$this->registerJsFile('@web/plugins/morris/morris.js',['depends'=>['backend\assets\AppAsset']]);
+$this->registerJsFile('@web/plugins/functions/morris-init.js',['depends'=>['backend\assets\AppAsset']]);
 ?>
 
     <!-- Small boxes (Stat box) -->
@@ -288,4 +288,5 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
         </div>
+    </div>
 
