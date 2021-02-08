@@ -1,51 +1,34 @@
-,
-	'\uD859\uDCDA',
-	'\uD859\uDCDB',
-	'\uD859\uDCDC',
-	'\uD859\uDCDD',
-	'\uD859\uDCDE',
-	'\uD859\uDCDF',
-	'\uD859\uDCE0',
-	'\uD859\uDCE1',
-	'\uD859\uDCE2',
-	'\uD859\uDCE3',
-	'\uD859\uDCE4',
-	'\uD859\uDCE5',
-	'\uD859\uDCE6',
-	'\uD859\uDCE7',
-	'\uD859\uDCE8',
-	'\uD859\uDCE9',
-	'\uD859\uDCEA',
-	'\uD859\uDCEB',
-	'\uD859\uDCEC',
-	'\uD859\uDCED',
-	'\uD859\uDCEE',
-	'\uD859\uDCEF',
-	'\uD859\uDCF0',
-	'\uD859\uDCF1',
-	'\uD859\uDCF2',
-	'\uD859\uDCF3',
-	'\uD859\uDCF4',
-	'\uD859\uDCF5',
-	'\uD859\uDCF6',
-	'\uD859\uDCF7',
-	'\uD859\uDCF8',
-	'\uD859\uDCF9',
-	'\uD859\uDCFA',
-	'\uD859\uDCFB',
-	'\uD859\uDCFC',
-	'\uD859\uDCFD',
-	'\uD859\uDCFE',
-	'\uD859\uDCFF',
-	'\uD859\uDD00',
-	'\uD859\uDD01',
-	'\uD859\uDD02',
-	'\uD859\uDD03',
-	'\uD859\uDD04',
-	'\uD859\uDD05',
-	'\uD859\uDD06',
-	'\uD859\uDD07',
-	'\uD859\uDD08',
-	'\uD859\uDD09',
-	'\uD859\uDD0A',
-	'\u
+<?php
+/**
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+namespace app\assets;
+
+use yii\web\AssetBundle;
+
+/**
+ * Main application asset bundle.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com,
+ * @since 2.0
+ */
+class AppAsset extends AssetBundle
+{
+    public $basePath = '@webroot';
+    public $baseUrl = '@web';
+    public $css = [
+    "/css/style.css",
+	"/css/font-awesome/css/font-awesome.min.css",
+	"/css/et-line-font/et-line-font.css",
+	"/css/themify-icons/themify-icons.css",
+    ];
+    public $js = [
+    ];
+    public $depends = [
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
+    ];
+}
