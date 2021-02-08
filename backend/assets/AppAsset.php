@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace backend\assets;
 
 use yii\web\AssetBundle;
 
@@ -20,12 +20,18 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-    "/css/style.css",
-	"/css/font-awesome/css/font-awesome.min.css",
-	"/css/et-line-font/et-line-font.css",
-	"/css/themify-icons/themify-icons.css",
+    "css/style.css",
+	"css/font-awesome/css/font-awesome.min.css",
+	"css/et-line-font/et-line-font.css",
+	"css/themify-icons/themify-icons.css",
     ];
     public $js = [
+		"js/jquery.min.js",
+		"bootstrap/js/bootstrap.min.js",
+		"js/niche.js",
+		"plugins/raphael/raphael-min.js",
+		"plugins/morris/morris.js",
+		"plugins/functions/morris-init.js",
     ];
     public $depends = [
         'yii\web\YiiAsset',
