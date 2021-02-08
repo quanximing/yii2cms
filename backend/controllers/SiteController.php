@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use backend\models\LoginForm;
 
 /**
  * Site controller
@@ -35,7 +35,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['post','get'],
                 ],
             ],
         ];
@@ -70,11 +70,11 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = '//main-login';
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
-        $this->layout = 'blank';
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
@@ -96,7 +96,11 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
+    }
+
+    public function actionFlush(){
+        Yii::$app->cache->flush();
+        return $this->refresh();
     }
 }

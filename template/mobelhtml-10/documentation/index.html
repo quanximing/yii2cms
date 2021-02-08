@@ -1,0 +1,446 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mobel - Website Documentation</title>
+    <!--CSS styles-->
+    <link rel="stylesheet" media="screen" href="css/default.min.css" />
+    <link rel="stylesheet" media="screen" href="css/help.css" />
+    <!--JS files-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        $(function () {
+            $('nav li a').click(function () {
+                $('nav li a').removeClass('active');
+                $(this).addClass('active')
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="label"><a>Navigation</a></li>
+            <li><a href="#css-files">CSS files</a></li>
+            <li><a href="#xmas">Xmas theme <span class="alert">New in 2.1</span></a></li>
+            <li><a href="#rtl">RTL Support <span class="alert">New in 2.2</span></a></li>
+            <li><a href="#js-files">Javascript files</a></li>
+            <li><a href="#loader">Page loader</a></li>
+            <li><a href="#nav">Navigation <span class="alert">New in 2.2</span></a></li>
+            <li><a href="#slider">Frontpage slider</a></li>
+            <li><a href="#icon-slider">Furniture icons</a></li>
+            <li><a href="#stretcher">Stretcher widget</a></li>
+            <li><a href="#tabsy">Tabsy gallery</a></li>
+            <li><a href="#blog">Blog items</a></li>
+            <li><a href="#products">Product items</a></li>
+            <li><a href="#filters">Product filters <span class="alert">New in 2.0</span></a></li>
+            <li><a href="#contact">Contact - Send email <span class="alert">New in 2.0</span></a></li>
+            <li><a href="#credits">Credits</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>
+            Mobel - Theme documentation
+            <br />
+            <small style="color:#808080">Version 2.2.0</small>
+        </h1>
+
+        <!-- #################### CSS #################### -->
+
+        <div id="css-files">
+            <h2 class="title">Stylesheets</h2>
+            <p>
+                First of all, you need to include all needed css files. Make sure that the main theme css "
+                <i class="true">theme.css</i>" is the last one, it will apply all basic theme files. Media queries for responsive preview are included!
+            </p>
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/bootstrap.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/animate.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/font-awesome.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/furniture-icons.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/linear-icons.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/magnific-popup.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/owl.carousel.css&quot; /&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/theme.css&quot; /&gt;</code>    </pre>
+        </div>
+
+        <!-- #################### XMAS #################### -->
+
+        <div id="xmas">
+            <h2 class="title">Xmas & new year theme</h2>
+            <p>
+                Update/copy your css folder in the current one. Please check that you have included the file: <strong>/css/img/xmas</strong>
+            </p>
+            <p>
+                Xmas theme needs to be the last one included, so it will overwrite all styles with the new one. <br />Check file <strong>index-xmas.html</strong>
+            </p>
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!--Xmas Theme Styles--&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/theme-xmas.css&quot; /&gt;</code>    </pre>
+        </div>
+
+        <!-- #################### RTL #################### -->
+
+        <div id="rtl">
+            <h2 class="title">RTL Support</h2>
+            <p>
+                RTL support is now available in version 2.2
+            </p>
+            <p>
+                Include <strong>theme-rtl.css</strong> in page header to enable RTL direction for arabic languages, or check <strong>index-rtl.html</strong> to see an example.
+            </p>
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!--RTL Support --&gt;<br />&lt;link rel=&quot;stylesheet&quot; media=&quot;all&quot; href=&quot;css/theme-rtl.css&quot; /&gt;</code>    </pre>
+        </div>
+
+        <!-- #################### Javascript #################### -->
+
+        <div id="js-files">
+            <h2 class="title">Javascript</h2>
+            <p>
+                Add all main .js files to your document. Options and initalizations are in "
+                <i class="true">main.js</i>"
+            </p>
+            <pre><code class="hljs"><br>&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery.bootstrap.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery.magnific-popup.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery.owl.carousel.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery.ion.rangeSlider.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/jquery.isotope.pkgd.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;</code>    </pre>
+        </div>
+
+        <!-- #################### Page loader #################### -->
+
+        <div id="loader">
+            <h2 class="title">Page loader</h2>
+            <p>Page loader markup needs to be firs element after "body" tag.</p>
+
+            <div class="image" style="border:1px solid #dddddd;margin-bottom:10px;">
+                <img src="assets/images/loader.jpg" alt="" />
+            </div>
+
+            <h4 class="subtitle">Markup of loader</h4>
+            <pre -number class="brush: html  language-html"><code>&lt;div class=&quot;page-loader&quot;&gt;&lt;/div&gt;</code></pre>
+
+            <h4 class="subtitle">Loader javascript</h4>
+            <p>Be sure that <strong>$(window).bind("load", function () {...}</strong> cannot be inside <strong>$(function() {...})</strong> shorthand for $( document ).ready()</p>
+            <pre><code>$(window).on(&quot;load&quot;, function () {<br />    setTimeout(function () {<br />        $(&#39;.page-loader&#39;).addClass(&#39;loaded&#39;);<br />    }, 1000);<br />})</code></pre>
+        </div>
+
+        <!-- #################### Navigation #################### -->
+
+        <div id="nav">
+            <h2 class="title">Navigation</h2>
+
+            <h4 class="subtitle">Markup</h4>
+            <p>
+                First of all, you need to include all needed css files. Make sure that the main theme css "
+                <i class="true">theme.css</i>" is the last one, it will apply all basic theme files. Media queries for responsive preview are included!
+            </p>
+            <p>
+                <strong>What's new in 2.2</strong>
+            </p>
+            <p>
+                New feature is support for language & currency selector in <strong>"top-navigation"</strong> element. 
+                Also top-navigation is available and visible on mobile devices with all default functions. 
+                There is no need for navigation double rendering (one for desktop - second for mobile), now we have one markup for both cases.
+            </p>
+
+            <div class="image">
+                <p>
+                    <strong>Destop</strong>
+                </p>
+                <img src="assets/images/nav-desktop.jpg" alt="" />
+                <br />
+                <br />
+
+                <p>
+                    <strong>Mobile</strong>
+                </p>
+                <img src="assets/images/nav-mobile.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+                <code class="hljs"><br/>&lt;!--Use class &quot;navbar-fixed&quot; or &quot;navbar-default&quot; --&gt;<br/>&lt;!--If you use &quot;navbar-fixed&quot; it will be sticky menu on scroll (only for large screens)--&gt;<br/><br/>&lt;!-- ======================== Navigation ======================== --&gt;<br/><br/>&lt;nav class=&quot;navbar-fixed&quot;&gt;<br/><br/>    &lt;div class=&quot;container&quot;&gt;<br/><br/>        &lt;!-- ==========  Top navigation ========== --&gt;<br/><br/>        &lt;div class=&quot;navigation navigation-top clearfix&quot;&gt;<br/>            &lt;ul&gt;<br/>                &lt;!--add active class for current page--&gt;<br/><br/>                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-youtube&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/><br/>                &lt;!--Currency selector--&gt;<br/><br/>                &lt;li class=&quot;nav-settings&quot;&gt;<br/>                    &lt;a href=&quot;javascript:void(0);&quot; class=&quot;nav-settings-value&quot;&gt; USD $&lt;/a&gt;<br/>                    &lt;ul class=&quot;nav-settings-list&quot;&gt;<br/>                        &lt;li&gt;...&lt;/li&gt;<br/>                    &lt;/ul&gt;<br/>                &lt;/li&gt;<br/><br/>                &lt;!--Language selector--&gt;<br/><br/>                &lt;li class=&quot;nav-settings&quot;&gt;<br/>                    &lt;a href=&quot;javascript:void(0);&quot; class=&quot;nav-settings-value&quot;&gt; ENG&lt;/a&gt;<br/>                    &lt;ul class=&quot;nav-settings-list&quot;&gt;<br/>                        &lt;li&gt;...&lt;/li&gt;<br/>                    &lt;/ul&gt;<br/>                &lt;/li&gt;<br/><br/>                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;open-login&quot;&gt;&lt;i class=&quot;icon icon-user&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;open-search&quot;&gt;&lt;i class=&quot;icon icon-magnifier&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot; class=&quot;open-cart&quot;&gt;&lt;i class=&quot;icon icon-cart&quot;&gt;&lt;/i&gt; &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>            &lt;/ul&gt;<br/>        &lt;/div&gt; &lt;!--/navigation-top--&gt;<br/><br/>        &lt;!-- ==========  Main navigation ========== --&gt;<br/><br/>        &lt;div class=&quot;navigation navigation-main&quot;&gt;<br/><br/>            &lt;!-- Setup your logo here--&gt;<br/><br/>            &lt;a href=&quot;index.html&quot; class=&quot;logo&quot;&gt;&lt;img src=&quot;assets/images/logo.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;<br/><br/>            &lt;!-- Mobile toggle menu --&gt;<br/><br/>            &lt;a href=&quot;#&quot; class=&quot;open-menu&quot;&gt;&lt;i class=&quot;icon icon-menu&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/><br/>            &lt;!-- Convertible menu (mobile/desktop)--&gt;<br/><br/>            &lt;div class=&quot;floating-menu&quot;&gt;<br/><br/>                &lt;!-- Mobile toggle menu trigger--&gt;<br/><br/>                &lt;div class=&quot;close-menu-wrapper&quot;&gt;<br/>                    &lt;span class=&quot;close-menu&quot;&gt;&lt;i class=&quot;icon icon-cross&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br/>                &lt;/div&gt;<br/><br/>                &lt;ul&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;<br/>                            <br/>                    &lt;!-- Multi-content dropdown --&gt;<br/><br/>                    &lt;li&gt;<br/>                        &lt;a href=&quot;index.html&quot;&gt;Pages &lt;span class=&quot;open-dropdown&quot;&gt;&lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;<br/>                        &lt;div class=&quot;navbar-dropdown&quot;&gt;<br/>                            &lt;div class=&quot;navbar-box&quot;&gt;<br/><br/>                                &lt;!-- box-1 (left-side)--&gt;<br/><br/>                                &lt;div class=&quot;box-1&quot;&gt;<br/>                                    &lt;div class=&quot;box&quot;&gt;<br/>                                        &lt;div class=&quot;h2&quot;&gt;Your title&lt;/div&gt;<br/>                                        &lt;div class=&quot;clearfix&quot;&gt;<br/>                                            &lt;p&gt;Your text description...&lt;/p&gt;<br/>                                            &lt;a class=&quot;btn btn-clean btn-big&quot; href=&quot;#&quot;&gt;Shop now&lt;/a&gt;<br/>                                        &lt;/div&gt;<br/>                                    &lt;/div&gt;<br/>                                &lt;/div&gt;<br/><br/>                                &lt;!-- box-2 (right-side)--&gt;<br/><br/>                                &lt;div class=&quot;box-2&quot;&gt;<br/>                                    &lt;div class=&quot;box clearfix&quot;&gt;<br/>                                        &lt;div class=&quot;row&quot;&gt;<br/>                                            &lt;div class=&quot;col-md-4&quot;&gt;<br/>                                                &lt;ul&gt;<br/>                                                    &lt;li class=&quot;label&quot;&gt;Label name&lt;/li&gt;<br/>                                                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;<br/>                                                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;/li&gt;<br/>                                                &lt;/ul&gt;<br/>                                            &lt;/div&gt;<br/>                                            &lt;div class=&quot;col-md-4&quot;&gt;<br/>                                                <br/>                                                ...<br/><br/>                                            &lt;/div&gt;<br/>                                            &lt;div class=&quot;col-md-4&quot;&gt;<br/>                                                <br/>                                                ...<br/><br/>                                            &lt;/div&gt;<br/>                                        &lt;/div&gt; &lt;!--/row--&gt;<br/>                                    &lt;/div&gt; &lt;!--/box--&gt;<br/>                                &lt;/div&gt; &lt;!--/box-2--&gt;<br/>                            &lt;/div&gt; &lt;!--/navbar-box--&gt;<br/>                        &lt;/div&gt; &lt;!--/navbar-dropdown--&gt;<br/>                    &lt;/li&gt;<br/><br/>                    &lt;!-- Single dropdown--&gt;<br/><br/>                    &lt;li&gt;<br/>                        &lt;a href=&quot;#&quot;&gt;Shop &lt;span class=&quot;open-dropdown&quot;&gt;&lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;<br/>                        &lt;div class=&quot;navbar-dropdown navbar-dropdown-single&quot;&gt;<br/>                            &lt;div class=&quot;navbar-box&quot;&gt;<br/><br/>                                &lt;!-- box-2 (without &#39;box-1&#39;, box-2 will be displayed as full width)--&gt;<br/><br/>                                &lt;div class=&quot;box-2&quot;&gt;<br/>                                    &lt;div class=&quot;box clearfix&quot;&gt;<br/>                                        &lt;ul&gt;<br/>                                            &lt;li class=&quot;label&quot;&gt;Label name&lt;/li&gt;<br/>                                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;<br/>                                            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;/li&gt;<br/>                                        &lt;/ul&gt;<br/>                                    &lt;/div&gt; &lt;!--/box--&gt;<br/>                                &lt;/div&gt; &lt;!--/box-2--&gt;<br/>                            &lt;/div&gt; &lt;!--/navbar-box--&gt;<br/>                        &lt;/div&gt; &lt;!--/navbar-dropdown--&gt;<br/>                    &lt;/li&gt;<br/><br/>                    &lt;!-- Furniture icons in dropdown--&gt;<br/><br/>                    &lt;li&gt;<br/>                        &lt;a href=&quot;category.html&quot;&gt;Icons &lt;span class=&quot;open-dropdown&quot;&gt;&lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;<br/>                        &lt;div class=&quot;navbar-dropdown&quot;&gt;<br/>                            &lt;div class=&quot;navbar-box&quot;&gt;<br/><br/>                                &lt;!-- box-1 (left-side)--&gt;<br/><br/>                                &lt;div class=&quot;box-1&quot;&gt;<br/>                                    &lt;div class=&quot;box&quot;&gt;<br/>                                        &lt;div class=&quot;h2&quot;&gt;Your title&lt;/div&gt;<br/>                                        &lt;div class=&quot;clearfix&quot;&gt;<br/>                                            &lt;p&gt;Your text description...&lt;/p&gt;<br/>                                            &lt;a class=&quot;btn btn-clean btn-big&quot; href=&quot;#&quot;&gt;Shop now&lt;/a&gt;<br/>                                        &lt;/div&gt;<br/>                                    &lt;/div&gt;<br/>                                &lt;/div&gt;<br/><br/>                                &lt;!-- box-2 (right-side)--&gt;<br/><br/>                                &lt;div class=&quot;box-2&quot;&gt;<br/>                                    &lt;div class=&quot;clearfix categories&quot;&gt;<br/>                                        &lt;div class=&quot;row&quot;&gt;<br/>                                                    <br/>                                            &lt;!--icon item--&gt;                                                <br/><br/>                                            &lt;div class=&quot;col-sm-3 col-xs-6&quot;&gt;<br/>                                                &lt;a href=&quot;javascript:void(0);&quot;&gt;<br/>                                                    &lt;figure&gt;<br/>                                                        &lt;i class=&quot;f-icon f-icon-sofa&quot;&gt;&lt;/i&gt;<br/>                                                        &lt;figcaption&gt;Sofa&lt;/figcaption&gt;<br/>                                                    &lt;/figure&gt;<br/>                                                &lt;/a&gt;<br/>                                            &lt;/div&gt;<br/>                                                    <br/>                                            &lt;!--icon item--&gt;                                                <br/><br/>                                            &lt;div class=&quot;col-sm-3 col-xs-6&quot;&gt;<br/>                                                <br/>                                                ...<br/><br/>                                            &lt;/div&gt;<br/>                                                    <br/>                                            <br/>                                        &lt;/div&gt; &lt;!--/row--&gt;<br/>                                    &lt;/div&gt; &lt;!--/categories--&gt;<br/>                                &lt;/div&gt; &lt;!--/box-2--&gt;<br/>                            &lt;/div&gt; &lt;!--/navbar-box--&gt;<br/>                        &lt;/div&gt; &lt;!--/navbar-dropdown--&gt;<br/>                    &lt;/li&gt;<br/><br/>                    &lt;!-- Mega menu dropdown --&gt;<br/><br/>                    &lt;li&gt;<br/>                        &lt;a href=&quot;#&quot;&gt;Megamenu &lt;span class=&quot;open-dropdown&quot;&gt;&lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;<br/>                        &lt;div class=&quot;navbar-dropdown&quot;&gt;<br/>                            &lt;div class=&quot;navbar-box&quot;&gt;<br/>                                &lt;div class=&quot;box-2&quot;&gt;<br/>                                    &lt;div class=&quot;box clearfix&quot;&gt;<br/>                                        &lt;div class=&quot;row&quot;&gt;<br/>                                            &lt;div class=&quot;clearfix&quot;&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/>                                                    &lt;ul&gt;<br/>                                                        &lt;li class=&quot;label&quot;&gt;Label name&lt;/li&gt;<br/>                                                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;<br/>                                                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;/li&gt;<br/>                                                    &lt;/ul&gt;<br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/>                                                    &lt;ul&gt;<br/>                                                        &lt;li class=&quot;label&quot;&gt;Label name&lt;/li&gt;<br/>                                                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item&lt;/a&gt;&lt;/li&gt;<br/>                                                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;&lt;/li&gt;<br/>                                                    &lt;/ul&gt;<br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/><br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/>                                                    <br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/>                                            &lt;/div&gt;<br/><br/>                                            &lt;div class=&quot;clearfix&quot;&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/><br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/>                                                    <br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/><br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/><br/>                                                &lt;div class=&quot;col-md-3&quot;&gt;<br/>                                                    <br/>                                                    ...<br/><br/>                                                &lt;/div&gt;<br/>                                            &lt;/div&gt;<br/>                                        &lt;/div&gt;<br/>                                    &lt;/div&gt; &lt;!--/box--&gt;<br/>                                &lt;/div&gt; &lt;!--/box-2--&gt;<br/>                            &lt;/div&gt; &lt;!--/navbar-box--&gt;<br/>                        &lt;/div&gt; &lt;!--/navbar-dropdown--&gt;<br/>                    &lt;/li&gt;<br/><br/>                    &lt;!-- Simple menu link--&gt;<br/><br/>                    &lt;li&gt;&lt;a href=&quot;shortcodes.html&quot;&gt;Shortcodes&lt;/a&gt;&lt;/li&gt;<br/>                &lt;/ul&gt;<br/>            &lt;/div&gt; &lt;!--/floating-menu--&gt;<br/>        &lt;/div&gt; &lt;!--/navigation-main--&gt;<br/><br/>        &lt;!-- ==========  Search wrapper ========== --&gt;<br/><br/>        &lt;div class=&quot;search-wrapper&quot;&gt;<br/><br/>            &lt;!-- Search form --&gt;<br/>            &lt;input class=&quot;form-control&quot; placeholder=&quot;Search...&quot; /&gt;<br/>            &lt;button class=&quot;btn btn-main btn-search&quot;&gt;Go!&lt;/button&gt;<br/><br/>            &lt;!-- Search results - live search --&gt;<br/>            &lt;div class=&quot;search-results&quot;&gt;<br/>                &lt;div class=&quot;search-result-items&quot;&gt;<br/>                    &lt;div class=&quot;title h4&quot;&gt;Products &lt;a href=&quot;#&quot; class=&quot;btn btn-clean-dark btn-xs&quot;&gt;View all&lt;/a&gt;&lt;/div&gt;<br/>                    &lt;ul&gt;<br/>                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;id&quot;&gt;ProdID&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;Product name&lt;/span&gt; &lt;span class=&quot;category&quot;&gt;Product category&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;id&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;category&quot;&gt;...&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;/ul&gt;<br/>                &lt;/div&gt; &lt;!--/search-result-items--&gt;<br/>                &lt;div class=&quot;search-result-items&quot;&gt;<br/>                    &lt;div class=&quot;title h4&quot;&gt;Blog &lt;a href=&quot;#&quot; class=&quot;btn btn-clean-dark btn-xs&quot;&gt;View all&lt;/a&gt;&lt;/div&gt;<br/>                    &lt;ul&gt;<br/>                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;id&quot;&gt;Date&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;Article name &lt;/span&gt; &lt;span class=&quot;category&quot;&gt;Category&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;id&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;category&quot;&gt;...&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;/ul&gt;<br/>                &lt;/div&gt; &lt;!--/search-result-items--&gt;<br/>            &lt;/div&gt; &lt;!--/search-results--&gt;<br/>        &lt;/div&gt;<br/><br/>        &lt;!-- ==========  Login wrapper ========== --&gt;<br/><br/>        &lt;div class=&quot;login-wrapper&quot;&gt;<br/>            &lt;form&gt;<br/>                &lt;div class=&quot;h4&quot;&gt;Sign in&lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Email&quot;&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot;&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;a href=&quot;#forgotpassword&quot; class=&quot;open-popup&quot;&gt;Forgot password?&lt;/a&gt;<br/>                    &lt;a href=&quot;#createaccount&quot; class=&quot;open-popup&quot;&gt;Don&#39;t have an account?&lt;/a&gt;<br/>                &lt;/div&gt;<br/>                &lt;button type=&quot;submit&quot; class=&quot;btn btn-block btn-main&quot;&gt;Submit&lt;/button&gt;<br/>            &lt;/form&gt;<br/>        &lt;/div&gt;<br/><br/>        &lt;!-- ==========  Cart wrapper ========== --&gt;<br/><br/>        &lt;div class=&quot;cart-wrapper&quot;&gt;<br/>            &lt;div class=&quot;checkout&quot;&gt;<br/>                &lt;div class=&quot;clearfix&quot;&gt;<br/><br/>                    &lt;!--cart item--&gt;<br/><br/>                    &lt;div class=&quot;row&quot;&gt;<br/><br/>                        &lt;div class=&quot;cart-block cart-block-item clearfix&quot;&gt;<br/>                            &lt;div class=&quot;image&quot;&gt;<br/>                                &lt;a href=&quot;product.html&quot;&gt;&lt;img src=&quot;assets/images/product-1.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div class=&quot;title&quot;&gt;<br/>                                &lt;div&gt;&lt;a href=&quot;product.html&quot;&gt;Green corner&lt;/a&gt;&lt;/div&gt;<br/>                                &lt;small&gt;Green corner&lt;/small&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div class=&quot;quantity&quot;&gt;<br/>                                &lt;input type=&quot;number&quot; value=&quot;2&quot; class=&quot;form-control form-quantity&quot; /&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div class=&quot;price&quot;&gt;<br/>                                &lt;span class=&quot;final&quot;&gt;$ 1.998&lt;/span&gt;<br/>                                &lt;span class=&quot;discount&quot;&gt;$ 2.666&lt;/span&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;!--delete-this-item--&gt;<br/>                            &lt;span class=&quot;icon icon-cross icon-delete&quot;&gt;&lt;/span&gt;<br/>                        &lt;/div&gt;<br/><br/>                        &lt;!--cart item--&gt;<br/><br/>                        &lt;div class=&quot;cart-block cart-block-item clearfix&quot;&gt;<br/>                            <br/>                            ...<br/><br/>                        &lt;/div&gt;<br/><br/>                        &lt;!--cart item--&gt;<br/><br/>                    &lt;/div&gt;<br/><br/>                    &lt;hr /&gt;<br/><br/>                    &lt;!--cart prices --&gt;<br/><br/>                    &lt;div class=&quot;clearfix&quot;&gt;<br/>                        &lt;div class=&quot;cart-block cart-block-footer clearfix&quot;&gt;<br/>                            &lt;div&gt;<br/>                                &lt;strong&gt;Discount 15%&lt;/strong&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div&gt;<br/>                                &lt;span&gt;$ 159,00&lt;/span&gt;<br/>                            &lt;/div&gt;<br/>                        &lt;/div&gt;<br/><br/>                        &lt;div class=&quot;cart-block cart-block-footer clearfix&quot;&gt;<br/>                            &lt;div&gt;<br/>                                &lt;strong&gt;Shipping&lt;/strong&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div&gt;<br/>                                &lt;span&gt;$ 30,00&lt;/span&gt;<br/>                            &lt;/div&gt;<br/>                        &lt;/div&gt;<br/><br/>                        &lt;div class=&quot;cart-block cart-block-footer clearfix&quot;&gt;<br/>                            &lt;div&gt;<br/>                                &lt;strong&gt;VAT&lt;/strong&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div&gt;<br/>                                &lt;span&gt;$ 59,00&lt;/span&gt;<br/>                            &lt;/div&gt;<br/>                        &lt;/div&gt;<br/>                    &lt;/div&gt;<br/><br/>                    &lt;hr /&gt;<br/><br/>                    &lt;!--cart final price --&gt;<br/><br/>                    &lt;div class=&quot;clearfix&quot;&gt;<br/>                        &lt;div class=&quot;cart-block cart-block-footer clearfix&quot;&gt;<br/>                            &lt;div&gt;<br/>                                &lt;strong&gt;Total&lt;/strong&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div&gt;<br/>                                &lt;div class=&quot;h4 title&quot;&gt;$ 1259,00&lt;/div&gt;<br/>                            &lt;/div&gt;<br/>                        &lt;/div&gt;<br/>                    &lt;/div&gt;<br/><br/><br/>                    &lt;!--cart navigation --&gt;<br/><br/>                    &lt;div class=&quot;cart-block-buttons clearfix&quot;&gt;<br/>                        &lt;div class=&quot;row&quot;&gt;<br/>                            &lt;div class=&quot;col-xs-6&quot;&gt;<br/>                                &lt;a href=&quot;products-grid.html&quot; class=&quot;btn btn-clean-dark&quot;&gt;Continue shopping&lt;/a&gt;<br/>                            &lt;/div&gt;<br/>                            &lt;div class=&quot;col-xs-6 text-right&quot;&gt;<br/>                                &lt;a href=&quot;checkout-1.html&quot; class=&quot;btn btn-main&quot;&gt;&lt;span class=&quot;icon icon-cart&quot;&gt;&lt;/span&gt; Checkout&lt;/a&gt;<br/>                            &lt;/div&gt;<br/>                        &lt;/div&gt;<br/>                    &lt;/div&gt;<br/><br/>                &lt;/div&gt;<br/>            &lt;/div&gt; &lt;!--/checkout--&gt;<br/>        &lt;/div&gt; &lt;!--/cart-wrapper--&gt;<br/>    &lt;/div&gt; &lt;!--/container--&gt;<br/>&lt;!-/nav&gt;</code>    
+            </pre>
+
+            <h4 class="subtitle">Call javascript</h4>
+            <p>The functions are triggers login, searchbar or cart items. Mobile events are included too.</p>
+
+            <pre>
+                <code class="hljs">// Main navigation &amp; mega menu<br/>// ----------------------------------------------------------------<br/><br/>// Global menu variables<br/><br/>var objSearch = $(&#39;.search-wrapper&#39;),<br/>    objLogin = $(&#39;.login-wrapper&#39;),<br/>    objCart = $(&#39;.cart-wrapper&#39;),<br/>    objMenu = $(&#39;.floating-menu&#39;),<br/>    objMenuLink = $(&#39;.floating-menu a&#39;),<br/>    $search = $(&#39;.open-search&#39;),<br/>    $login = $(&#39;.open-login&#39;),<br/>    $cart = $(&#39;.open-cart&#39;),<br/>    $menu = $(&#39;.open-menu&#39;),<br/>    $openDropdown = $(&#39;.open-dropdown&#39;),<br/>    $settingsItem = $(&#39;.nav-settings .nav-settings-list li&#39;),<br/>    $close = $(&#39;.close-menu&#39;);<br/><br/>// Open/close login<br/><br/>$login.on(&#39;click&#39;, function () {<br/>    toggleOpen($(this));<br/>    objLogin.toggleClass(&#39;open&#39;);<br/>    closeSearch();<br/>    closeCart();<br/>});<br/><br/>// Open/close search bar<br/><br/>$search.on(&#39;click&#39;, function () {<br/>    toggleOpen($(this));<br/>    objSearch.toggleClass(&#39;open&#39;);<br/>    objSearch.find(&#39;input&#39;).focus();<br/>    closeLogin();<br/>    closeCart();<br/>});<br/><br/>// Open/close cart<br/><br/>$cart.on(&#39;click&#39;, function () {<br/>    toggleOpen($(this));<br/>    objCart.toggleClass(&#39;open&#39;);<br/>    closeLogin();<br/>    closeSearch();<br/>});<br/><br/>// Mobile menu open/close<br/><br/>$menu.on(&#39;click&#39;, function () {<br/>    objMenu.addClass(&#39;expanded&#39;);<br/>    closeSearch();<br/>    closeLogin();<br/>    closeCart();<br/>});<br/><br/>// Settings language &amp; currency dropdown<br/><br/>$settingsItem.on(&#39;click&#39;, function () {<br/>    var $value = $(this).closest(&#39;.nav-settings&#39;).find(&#39;.nav-settings-value&#39;);<br/>    $value.text($(this).text());<br/>});<br/><br/>// Floating menu hyperlink<br/>if ($(&#39;nav&#39;).hasClass(&#39;navbar-single-page&#39;)) {<br/>    objMenuLink.on(&#39;click&#39;, function () {<br/>        objMenu.removeClass(&#39;expanded&#39;);<br/>    });<br/>}<br/><br/>// Open dropdown/megamenu<br/><br/>$openDropdown.on(&#39;click&#39;, function (e) {<br/><br/>    e.preventDefault();<br/><br/>    var liParent = $(this).parent().parent(),<br/>        liDropdown = liParent.find(&#39;.navbar-dropdown&#39;);<br/><br/>    liParent.toggleClass(&#39;expanded&#39;);<br/><br/>    if (liParent.hasClass(&#39;expanded&#39;)) {<br/>        liDropdown.slideDown();<br/>    }<br/>    else {<br/>        liDropdown.slideUp();<br/>    }<br/>});<br/><br/>// Close menu (mobile)<br/><br/>$close.on(&#39;click&#39;, function () {<br/>    $(&#39;nav&#39;).find(&#39;.expanded&#39;).removeClass(&#39;expanded&#39;);<br/>    $(&#39;nav&#39;).find(&#39;.navbar-dropdown&#39;).slideUp();<br/>});<br/><br/>// Global functions<br/><br/>function toggleOpen(el) {<br/>    $(el).toggleClass(&#39;open&#39;);<br/>}<br/><br/>function closeSearch() {<br/>    objSearch.removeClass(&#39;open&#39;);<br/>    $search.removeClass(&#39;open&#39;);<br/>}<br/>function closeLogin() {<br/>    objLogin.removeClass(&#39;open&#39;);<br/>    $login.removeClass(&#39;open&#39;);<br/>}<br/>function closeCart() {<br/>    objCart.removeClass(&#39;open&#39;);<br/>    $cart.removeClass(&#39;open&#39;);<br/>}<br/><br/>// Sticky header<br/>// ----------------------------------------------------------------<br/><br/>var navbarFixed = $(&#39;nav.navbar-fixed&#39;);<br/><br/>// When reload page - check if page has offset<br/>if ($(document).scrollTop() &gt; 94) {<br/>    navbarFixed.addClass(&#39;navbar-sticked&#39;);<br/>}<br/>// Add sticky menu on scroll<br/>$(document).on(&#39;bind ready scroll&#39;, function () {<br/>    var docScroll = $(document).scrollTop();<br/>    if (docScroll &gt;= 10) {<br/>        navbarFixed.addClass(&#39;navbar-sticked&#39;);<br/>    } else {<br/>        navbarFixed.removeClass(&#39;navbar-sticked&#39;);<br/>    }<br/>});</code>
+            </pre>
+        </div>
+
+
+        <!-- #################### Frontpage slider #################### -->
+
+        <div id="slider">
+
+            <h2 class="title">Frontpage slider</h2>
+
+            <!-- --------- Markup --------- -->
+
+            <h4 class="subtitle">Markup example of slider</h4>
+            <p>
+                Animation are included and it can be called on data-amination attributes. List of supported animations are
+                <a href="https://daneden.github.io/animate.css/">here</a>
+            </p>
+
+            <div class="image">
+                <img src="assets/images/frontpage-slider.jpg" alt="" />
+            </div>
+
+            <pre>
+            <code class="hljs">&lt;div class=&quot;content-slider&quot;&gt;<br />    &lt;div class=&quot;owl-slider&quot;&gt; &lt;!-- for full screen slider use additional class &#39;owl-slider-fullscreen&#39; --&gt; <br />        &lt;!-- slide item --&gt;<br />        &lt;article style=&quot;background-image:url(assets/images/gallery-1.jpg)&quot;&gt;<br />            &lt;figure&gt;<br />                &lt;div class=&quot;container&quot;&gt;<br />                    &lt;h2 class=&quot;title animated h1&quot; data-animation=&quot;fadeInDown&quot;&gt;Title goes here...&lt;/h2&gt;<br />                    &lt;div class=&quot;desc animated&quot; data-animation=&quot;fadeInUp&quot;&gt;Content goes here...&lt;/div&gt;<br />                    &lt;div class=&quot;animated&quot; data-animation=&quot;fadeInUp&quot;&gt;<br />                        &lt;a href=&quot;#&quot; class=&quot;btn btn-main&quot;&gt;&lt;i class=&quot;icon icon-cart&quot;&gt;&lt;/i&gt; Button text&lt;/a&gt;<br />                    &lt;/div&gt;<br />                &lt;/div&gt;<br />            &lt;/figure&gt;<br />        &lt;/article&gt;<br />    &lt;/div&gt; <br />&lt;/div&gt;</code>
+            </pre>
+
+            <!-- --------- Initalize the plugin --------- -->
+
+            <h4 class="subtitle">Initalize the plugin</h4>
+            <p>
+                For more documentation please visit
+                <a href="http://www.landmarkmlp.com/js-plugin/owl.carousel/" target="_blank">Owl Carousel webiste</a>
+            </p>
+
+            <pre>
+            <code class="hljs">    // Frontpage slider<br />    // ----------------------------------------------------------------<br /><br />    var arrowIcons = [<br />        &#39;&lt;span class=&quot;icon icon-chevron-left&quot;&gt;&lt;/span&gt;&#39;,<br />        &#39;&lt;span class=&quot;icon icon-chevron-right&quot;&gt;&lt;/span&gt;&#39;<br />    ];<br /><br />    $.each($(&quot;.owl-slider&quot;), function (i, n) {<br /><br />        $(n).owlCarousel({<br />            autoHeight: false,<br />            navigation: true,<br />            navigationText: arrowIcons,<br />            items: 1,<br />            singleItem: true,<br />            addClassActive: true,<br />            transitionStyle: &quot;fadeUp&quot;,<br />            afterMove: animatetCaptions,<br />            autoPlay: 8000,<br />            stopOnHover: false<br />        });<br /><br />        animatetCaptions();<br /><br />        function animatetCaptions(event) {<br />            &quot;use strict&quot;;<br />            var activeItem = $(n).find(&#39;.owl-item.active&#39;),<br />            timeDelay = 100;<br />            $.each(activeItem.find(&#39;.animated&#39;), function (j, m) {<br />                var item = $(m);<br />                item.css(&#39;animation-delay&#39;, timeDelay + &#39;ms&#39;);<br />                timeDelay = timeDelay + 180;<br />                item.addClass(item.data(&#39;animation&#39;));<br />                setTimeout(function () {<br />                    item.removeClass(item.data(&#39;animation&#39;));<br />                }, 2000);<br />            });<br />        }<br /><br />        if ($(n).hasClass(&#39;owl-slider-fullscreen&#39;)) {<br />            $(&#39;.header-content .item&#39;).height($(window).height());<br />        }<br />    });</code>
+            </pre>
+
+        </div>
+
+        <!-- #################### Icon slider #################### -->
+
+        <div id="icon-slider">
+
+            <h2 class="title">Furniture icon slider</h2>
+
+            <!-- --------- Markup --------- -->
+
+            <h4 class="subtitle">Markup example of slider</h4>
+            <p>
+                All furniture icon examples are available in the
+                <a href="../template/shortcodes.html"><strong>shorcodes</strong></a> page. Here is an example to generate a markup and initalize javascript function.
+            </p>
+
+            <div class="image">
+                <img src="assets/images/icons.jpg" alt="" />
+            </div>
+
+            <pre>
+            <code class="hljs">&lt;div class=&quot;owl-icons-wrapper owl-icons-frontpage&quot;&gt;<br />    &lt;div class=&quot;container&quot;&gt;<br />        &lt;div class=&quot;owl-icons&quot;&gt;<br />            &lt;!-- === icon item === --&gt;<br />            &lt;a href=&quot;#&quot;&gt;<br />                &lt;figure&gt;<br />                    &lt;i class=&quot;f-icon f-icon-sofa&quot;&gt;&lt;/i&gt;<br />                    &lt;figcaption&gt;Sofa&lt;/figcaption&gt;<br />                &lt;/figure&gt;<br />            &lt;/a&gt;<br />        &lt;/div&gt; <br />    &lt;/div&gt; <br />&lt;div&gt;</code>
+            </pre>
+
+            <!-- --------- Initalize the plugin --------- -->
+
+            <h4 class="subtitle">Initalize the plugin</h4>
+
+            <pre>
+            <code class="hljs">arrowIcons = [<br />    &#39;&lt;span class=&quot;icon icon-chevron-left&quot;&gt;&lt;/span&gt;&#39;,<br />    &#39;&lt;span class=&quot;icon icon-chevron-right&quot;&gt;&lt;/span&gt;&#39;<br />];<br />$.each($(&quot;.owl-icons&quot;), function (i, n) {<br />    $(n).owlCarousel({<br />        autoHeight: false,<br />        pagination: false,<br />        navigation: true,<br />        navigationText: arrowIcons,<br />        items: 6,<br />        itemsDesktop: [1199, 5],<br />        itemsDesktopSmall: [979, 5],<br />        itemsTablet: [768, 4],<br />        itemsTabletSmall: false,<br />        itemsMobile: [479, 3],<br />        addClassActive: true,<br />        autoPlay: 5500,<br />        stopOnHover: true<br />    });<br />});
+            </code>
+            </pre>
+
+            <p>Don't repeat variable "arrowIcons" if already included.</p>
+        </div>
+
+        <!-- #################### Stretcher widget #################### -->
+
+        <div id="stretcher">
+            <h2 class="title">Stretcher widget</h2>
+            <p>Stretcher widget is custom made grid stretcher, and it support only 4 elements for inline display.</p>
+
+            <h4 class="subtitle">Markup</h4>
+
+            <div class="image">
+                <img src="assets/images/stretcher.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;section class=&quot;stretcher-wrapper&quot;&gt;<br />    &lt;!-- === stretcher === --&gt;<br />    &lt;ul class=&quot;stretcher&quot;&gt;<br />        &lt;!-- === stretcher item === --&gt;<br />        &lt;li class=&quot;stretcher-item&quot; style=&quot;background-image:url(...);&quot;&gt;<br />            &lt;!--logo-item--&gt;<br />            &lt;div class=&quot;stretcher-logo&quot;&gt;<br />                &lt;div class=&quot;text&quot;&gt;<br />                    &lt;span class=&quot;f-icon f-icon-bedroom&quot;&gt;&lt;/span&gt;<br />                    &lt;span class=&quot;text-intro&quot;&gt;...&lt;/span&gt;<br />                &lt;/div&gt;<br />            &lt;/div&gt;<br />            &lt;!--main text--&gt;<br />            &lt;figure&gt;<br />                &lt;h4&gt;Your title ...&lt;/h4&gt;<br />                &lt;figcaption&gt;Description ...&lt;/figcaption&gt;<br />            &lt;/figure&gt;<br />            &lt;!--anchor--&gt;<br />            &lt;a href=&quot;#&quot;&gt;Anchor link (this text will not be visable)&lt;/a&gt;<br />        &lt;/li&gt;<br />        &lt;li&gt;<br />            ...<br />        &lt;/li&gt;<br />        &lt;!-- === stretcher item more=== --&gt;<br />        &lt;li class=&quot;stretcher-item more&quot;&gt;<br />            &lt;div class=&quot;more-icon&quot;&gt;<br />                &lt;span data-title-show=&quot;Show more&quot; data-title-hide=&quot;+&quot;&gt;&lt;/span&gt;<br />            &lt;/div&gt;<br />            &lt;a href=&quot;#&quot;&gt;&lt;/a&gt;<br />        &lt;/li&gt;<br />    &lt;/ul&gt;<br />&lt;/section&gt;
+            </code>
+            </pre>
+
+            <h4 class="subtitle">Javascript:</h4>
+
+            <pre>
+            <code class="hljs">    // Strecher accordion<br />    // ----------------------------------------------------------------<br /><br />    var $strecherItem = $(&#39;.stretcher-item&#39;);<br />    $strecherItem.bind({<br />        mouseenter: function (e) {<br />            $(this).addClass(&#39;active&#39;);<br />            $(this).siblings().addClass(&#39;inactive&#39;);<br />        },<br />        mouseleave: function (e) {<br />            $(this).removeClass(&#39;active&#39;);<br />            $(this).siblings().removeClass(&#39;inactive&#39;);<br />        }<br />    });</code>
+            </pre>
+        </div>
+
+        <!-- #################### Tabsy widget #################### -->
+
+        <div id="tabsy">
+
+            <h2 class="title">Tabsy (image gallery tabs)</h2>
+
+            <h4 class="subtitle">Markup content</h4>
+            <p>Tabsy gallery can be applied on any framework (with grid items) or it can be used as it is</p>
+
+            <div class="image">
+                <img src="assets/images/tabsy-content.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!-- ========================  Tabsy wrapper ======================== --&gt;<br /><br />&lt;section class=&quot;tabsy-wrapper&quot;&gt;<br /><br />    &lt;div class=&quot;container&quot;&gt;<br /><br />        &lt;!--User main image on &quot;tabsy&quot; as background image--&gt;<br /><br />        &lt;div class=&quot;tabsy&quot; style=&quot;background-image:url(...)&quot;&gt;<br /><br />            &lt;!-- === tabsy images === --&gt;<br /><br />            &lt;div class=&quot;tabsy-images&quot;&gt;<br /><br />                &lt;!-- Image --&gt;<br /><br />                &lt;div id=&quot;id-1&quot;&gt;<br />                    &lt;img src=&quot;...&quot; alt=&quot;&quot; /&gt;<br />                &lt;/div&gt;<br /><br />                &lt;!-- Image --&gt;<br /><br />                &lt;div id=&quot;id-2&quot;&gt;<br />                    &lt;img src=&quot;...&quot; alt=&quot;&quot; /&gt;<br />                &lt;/div&gt;<br /><br />            &lt;/div&gt;<br /><br />            &lt;!-- === tabsy links === --&gt;<br /><br />            &lt;div class=&quot;tabsy-links&quot;&gt;<br /><br />                &lt;div class=&quot;row&quot;&gt;<br /><br />                    &lt;!-- figure &quot;data-image&quot; needs to have same value as tabsy-images &gt; div ID --&gt;<br />                    &lt;!-- use current class to set default item --&gt;<br /><br />                    &lt;!--tab item--&gt;<br /><br />                    &lt;figure class=&quot;col-sm-3 col-md-3 current&quot; data-image=&quot;id-1&quot;&gt;<br />                        &lt;a href=&quot;#&quot; class=&quot;link&quot;&gt;Anchor link (this text is now visable)&lt;/a&gt;<br />                        &lt;figcaption&gt;<br />                            &lt;span class=&quot;date&quot;&gt;Date...&lt;/span&gt;<br />                            &lt;span class=&quot;h4 title&quot;&gt;Title ...&lt;/span&gt;<br />                            &lt;span class=&quot;desc&quot;&gt;Description ...&lt;/span&gt;<br />                        &lt;/figcaption&gt;<br />                    &lt;/figure&gt;<br /><br />                    &lt;!--tab item--&gt;<br /><br />                    &lt;figure class=&quot;col-sm-3 col-md-3&quot; data-image=&quot;id-2&quot;&gt;<br />                        ...<br />                    &lt;/figure&gt;<br /><br />                &lt;/div&gt; &lt;!--/row--&gt;<br />            &lt;/div&gt; &lt;!--/tabsy-links--&gt;<br />        &lt;/div&gt; &lt;!--/tabsy--&gt;<br />    &lt;/div&gt; &lt;!--/container--&gt;<br />&lt;/section&gt;
+            </code>    
+            </pre>
+
+
+            <h4 class="subtitle">Markup tabsy frontpage</h4>
+
+            <p>We have two examples for tabsy gallery, can be nice replacement for some frontpage header slider (extra class: "tabsy-wrapper-frontpage"), or just it can be used as section.</p>
+
+            <div class="image">
+                <img src="assets/images/tabsy-header.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;section class=&quot;tabsy-wrapper tabsy-wrapper-frontpage&quot;&gt;<br />    ...<br />&lt;/section&gt;</code>    
+            </pre>
+
+            <h4 class="subtitle">Javascript:</h4>
+
+            <pre>
+            <code class="hljs">    // Tabsy images<br />    // ----------------------------------------------------------------<br /><br />    var tabsyImg = $(&#39;.tabsy .tabsy-images &gt; div&#39;),<br />        tabsyLink = $(&#39;.tabsy .tabsy-links figure&#39;);<br /><br />    // apply images to parent background<br />    tabsyImg.each(function (i, n) {<br />        $(n).css(&#39;background-image&#39;, &#39;url(&#39; + $(n).find(&#39;img&#39;).attr(&#39;src&#39;) + &#39;)&#39;);<br />    });<br /><br />    tabsyLink.bind(&#39;mouseenter mouseleave&#39;, function () {<br />        var self = $(this),<br />            tabID = self.attr(&#39;data-image&#39;);<br />        tabsyLink.removeClass(&#39;current&#39;);<br />        tabsyImg.removeClass(&#39;current&#39;);<br />        self.addClass(&#39;current&#39;);<br />        self.closest(&#39;.tabsy&#39;).find(&quot;#&quot; + tabID).addClass(&#39;current&#39;);<br />    });
+            </code>    
+            </pre>
+
+        </div>
+
+        <!-- #################### Blog items #################### -->
+
+        <div id="blog">
+
+            <h2 class="title">Blog listing articles</h2>
+
+            <h4 class="subtitle">Markup - Blog Blocks</h4>
+
+            <div class="image">
+                <img src="assets/images/blog-1.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!-- ========================  Blog Block ======================== --&gt;<br /><br />&lt;section class=&quot;blog blog-block&quot;&gt;<br /><br />    &lt;div class=&quot;container&quot;&gt;<br /><br />        &lt;div class=&quot;row&quot;&gt;<br /><br />            &lt;!-- === blog item === --&gt;<br /><br />            &lt;div class=&quot;col-sm-4&quot;&gt;<br />                &lt;article&gt;<br />                    &lt;a href=&quot;article.html&quot;&gt;<br />                        &lt;div class=&quot;image&quot;&gt;<br />                            &lt;img src=&quot;assets/images/project-1.jpg&quot; alt=&quot;&quot; /&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;entry entry-block&quot;&gt;<br />                            &lt;div class=&quot;date&quot;&gt;Date ....&lt;/div&gt;<br />                            &lt;div class=&quot;title&quot;&gt;<br />                                &lt;h2 class=&quot;h3&quot;&gt;Title ...&lt;/h2&gt;<br />                            &lt;/div&gt;<br />                            &lt;div class=&quot;description&quot;&gt;<br />                                &lt;p&gt;<br />                                    Description ...<br />                                &lt;/p&gt;<br />                            &lt;/div&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;show-more&quot;&gt;<br />                            &lt;span class=&quot;btn btn-main btn-block&quot;&gt;Read more&lt;/span&gt;<br />                        &lt;/div&gt;<br />                    &lt;/a&gt;<br />                &lt;/article&gt;<br />            &lt;/div&gt;<br /><br />            &lt;!-- === blog item === --&gt;<br /><br />            ...<br />                    <br />        &lt;/div&gt; &lt;!--/row--&gt;<br /><br /><br />    &lt;/div&gt; &lt;!--/container--&gt;<br />&lt;/section&gt;</code>    
+            </pre>
+
+            <h4 class="subtitle">Markup - Blog simple</h4>
+
+            <div class="image">
+                <img src="assets/images/blog-2.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code>&lt;!-- ========================  Blog ======================== --&gt;<br /><br />&lt;section class=&quot;blog&quot;&gt;<br /><br />    &lt;div class=&quot;container&quot;&gt;<br /><br />        &lt;div class=&quot;row&quot;&gt;<br /><br />            &lt;!-- === blog item === --&gt;<br /><br />            &lt;div class=&quot;col-sm-4&quot;&gt;<br />                &lt;article&gt;<br />                    &lt;a href=&quot;article.html&quot;&gt;<br />                        &lt;div class=&quot;image&quot; style=&quot;background-image:url(...)&quot;&gt;<br />                            &lt;img src=&quot;...&quot; alt=&quot;&quot; /&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;entry entry-table&quot;&gt;<br />                            &lt;div class=&quot;date-wrapper&quot;&gt;<br />                                &lt;div class=&quot;date&quot;&gt;<br />                                    &lt;span&gt;MAR&lt;/span&gt;<br />                                    &lt;strong&gt;08&lt;/strong&gt;<br />                                    &lt;span&gt;2017&lt;/span&gt;<br />                                &lt;/div&gt;<br />                            &lt;/div&gt;<br />                            &lt;div class=&quot;title&quot;&gt;<br />                                &lt;h2 class=&quot;h5&quot;&gt;Title ...&lt;/h2&gt;<br />                            &lt;/div&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;show-more&quot;&gt;<br />                            &lt;span class=&quot;btn btn-main btn-block&quot;&gt;Link ...&lt;/span&gt;<br />                        &lt;/div&gt;<br />                    &lt;/a&gt;<br />                &lt;/article&gt;<br />            &lt;/div&gt;<br /><br />            &lt;!-- === blog item === --&gt;<br /><br />            ...<br /><br />        &lt;/div&gt; &lt;!--/row--&gt;<br /><br />    &lt;/div&gt; &lt;!--/container--&gt;<br />&lt;/section&gt;</code>
+            </pre>
+        </div>
+
+        <!-- #################### Product items #################### -->
+
+        <div id="products">
+
+            <h2 class="title">Product listing articles</h2>
+
+            <h4 class="subtitle">Markup product grid</h4>
+
+            <div class="image">
+                <img src="assets/images/products-grid.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!-- ========================  Products widget ======================== --&gt;<br /><br />&lt;section class=&quot;products&quot;&gt;<br /><br />    &lt;div class=&quot;container&quot;&gt;<br /><br />        &lt;div class=&quot;row&quot;&gt;<br /><br />            &lt;!-- === product-item === --&gt;<br /><br />            &lt;div class=&quot;col-md-4 col-xs-6&quot;&gt;<br /><br />                &lt;article&gt;<br /><br />                    &lt;!--add to favorite &amp; quick look--&gt;<br /><br />                    &lt;div class=&quot;info&quot;&gt;<br />                        &lt;span class=&quot;add-favorite added&quot;&gt;<br />                            &lt;a href=&quot;javascript:void(0);&quot; data-title=&quot;Add to favorites&quot; data-title-added=&quot;Added to favorites list&quot;&gt;&lt;i class=&quot;icon icon-heart&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br />                        &lt;/span&gt;<br />                        &lt;span&gt;<br />                            &lt;a href=&quot;#productid1&quot; class=&quot;mfp-open&quot; data-title=&quot;Quick wiew&quot;&gt;&lt;i class=&quot;icon icon-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br />                        &lt;/span&gt;<br />                    &lt;/div&gt;<br /><br />                    &lt;!--add to cart icon--&gt;<br /><br />                    &lt;div class=&quot;btn btn-add&quot;&gt;<br />                        &lt;i class=&quot;icon icon-cart&quot;&gt;&lt;/i&gt;<br />                    &lt;/div&gt;<br /><br />                    &lt;!--product specifications use "figure-grid" --&gt;<br /><br />                    &lt;div class=&quot;figure-grid&quot;&gt;<br /><br />                        &lt;!--product image--&gt;<br /><br />                        &lt;div class=&quot;image&quot;&gt;<br />                            &lt;a href=&quot;#productid1&quot; class=&quot;mfp-open&quot;&gt;<br />                                &lt;img src=&quot;assets/images/product-1.png&quot; alt=&quot;&quot; width=&quot;360&quot; /&gt;<br />                            &lt;/a&gt;<br />                        &lt;/div&gt;<br /><br />                        &lt;!--product text--&gt;<br /><br />                        &lt;div class=&quot;text&quot;&gt;<br />                            &lt;h2 class=&quot;title h4&quot;&gt;&lt;a href=&quot;$&quot;&gt;...&lt;/a&gt;&lt;/h2&gt;<br /><br />                            &lt;!--old price--&gt;<br />                            &lt;sub&gt;$ 1499,-&lt;/sub&gt;<br /><br />                            &lt;!--new price--&gt;<br /><br />                            &lt;sup&gt;$ 1099,-&lt;/sup&gt;<br /><br />                            &lt;span class=&quot;description clearfix&quot;&gt;Desciption ...&lt;/span&gt;<br />                        &lt;/div&gt;<br />                    &lt;/div&gt;<br />                &lt;/article&gt;<br />            &lt;/div&gt;<br /><br />        &lt;/div&gt; &lt;!--/row--&gt;<br /><br />    &lt;/div&gt; &lt;!--/container--&gt;<br />/&lt;!--/section&gt;</code>    
+            </pre>
+
+            <h4 class="subtitle">Markup product list</h4>
+            <div class="image">
+                <img src="assets/images/products-list.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code class="hljs">&lt;!-- ======================== Products ======================== --&gt;<br /><br />&lt;section class=&quot;products&quot;&gt;<br /><br />    &lt;div class=&quot;container&quot;&gt;<br /><br />        &lt;div class=&quot;row&quot;&gt;<br /><br />            &lt;!-- === product-item === --&gt;<br /><br />            &lt;div class=&quot;col-md-12&quot;&gt;<br />                &lt;article&gt;<br /><br />                    &lt;!--add to favorite &amp; quick look--&gt;<br /><br />                    &lt;div class=&quot;info&quot;&gt;<br />                        &lt;span class=&quot;add-favorite&quot;&gt;<br />                            &lt;a href=&quot;javascript:void(0);&quot; data-title=&quot;Add to favorites&quot; data-title-added=&quot;Added to favorites list&quot;&gt;&lt;i class=&quot;icon icon-heart&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br />                        &lt;/span&gt;<br />                        &lt;span&gt;<br />                            &lt;a href=&quot;#productid1&quot; class=&quot;mfp-open&quot; data-title=&quot;Quick wiew&quot;&gt;&lt;i class=&quot;icon icon-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br />                        &lt;/span&gt;<br />                    &lt;/div&gt;<br /><br />                    &lt;!--add to cart icon--&gt;<br /><br />                    &lt;div class=&quot;btn btn-add&quot;&gt;<br />                        &lt;i class=&quot;icon icon-cart&quot;&gt;&lt;/i&gt;<br />                    &lt;/div&gt;<br /><br />                    &lt;!--product specifications use &quot;figure-list&quot; --&gt;<br /><br />                    &lt;div class=&quot;figure-list&quot;&gt;<br /><br />                        &lt;!--product image--&gt;<br /><br />                        &lt;div class=&quot;image&quot;&gt;<br />                            &lt;a href=&quot;#productid1&quot; class=&quot;mfp-open&quot;&gt;<br />                                &lt;img src=&quot;assets/images/product-1.png&quot; alt=&quot;&quot; width=&quot;360&quot; /&gt;<br />                            &lt;/a&gt;<br />                        &lt;/div&gt;<br /><br />                        &lt;!--product text--&gt;<br /><br />                        &lt;div class=&quot;text&quot;&gt;<br />                            &lt;h2 class=&quot;title h4&quot;&gt;&lt;a href=&quot;product.html&quot;&gt;...&lt;/a&gt;&lt;/h2&gt;<br /><br />                            &lt;!--old price--&gt;<br /><br />                            &lt;sub&gt;$ 1499,-&lt;/sub&gt;<br /><br />                            &lt;!--new price--&gt;<br /><br />                            &lt;sup&gt;$ 1099,-&lt;/sup&gt;<br /><br />                            &lt;span class=&quot;description clearfix&quot;&gt;Description ....&lt;/span&gt;<br />                        &lt;/div&gt;<br />                    &lt;/div&gt;<br />                &lt;/article&gt;<br />            &lt;/div&gt;<br /><br />        &lt;/div&gt;&lt;!--/row--&gt;<br /><br />    &lt;/div&gt;&lt;!--/container--&gt;<br />&lt;/section&gt;</code>    
+            </pre>
+
+            <h4 class="subtitle">Product Quick view markup</h4>
+            <div class="image">
+                <img src="assets/images/popup.jpg" alt="" />
+            </div>
+
+            <pre data-number class="brush: html  language-html">
+            <code>&lt;!-- ========================  Product info popup - quick view ======================== --&gt;<br />&lt;div class=&quot;popup-main mfp-hide&quot; id=&quot;productid1&quot;&gt;<br />    &lt;!-- === product popup === --&gt;<br />    &lt;div class=&quot;product&quot;&gt;<br />        &lt;!-- === popup-title === --&gt;<br />        &lt;div class=&quot;popup-title&quot;&gt;<br />            &lt;div class=&quot;h1 title&quot;&gt;<br />                Laura<br />                &lt;small&gt;product category&lt;/small&gt;<br />            &lt;/div&gt;<br />        &lt;/div&gt;<br />        &lt;!-- === product gallery === --&gt;<br />        &lt;div class=&quot;owl-product-gallery&quot;&gt;<br />            &lt;img src=&quot;assets/images/product-1.png&quot; alt=&quot;&quot; width=&quot;640&quot; /&gt;<br />            &lt;img src=&quot;assets/images/product-2.png&quot; alt=&quot;&quot; width=&quot;640&quot; /&gt;<br />            &lt;img src=&quot;assets/images/product-3.png&quot; alt=&quot;&quot; width=&quot;640&quot; /&gt;<br />            &lt;img src=&quot;assets/images/product-4.png&quot; alt=&quot;&quot; width=&quot;640&quot; /&gt;<br />        &lt;/div&gt;<br />        &lt;!-- === product-popup-info === --&gt;<br />        &lt;div class=&quot;popup-content&quot;&gt;<br />            &lt;div class=&quot;product-info-wrapper&quot;&gt;<br />                &lt;div class=&quot;row&quot;&gt;<br />                    &lt;!-- === left-column === --&gt;<br />                    &lt;div class=&quot;col-sm-6&quot;&gt;<br />                        &lt;div class=&quot;info-box&quot;&gt;<br />                            &lt;strong&gt;Maifacturer&lt;/strong&gt;<br />                            &lt;span&gt;Brand name&lt;/span&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;info-box&quot;&gt;<br />                            &lt;strong&gt;Materials&lt;/strong&gt;<br />                            &lt;span&gt;Wood, Leather, Acrylic&lt;/span&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;info-box&quot;&gt;<br />                            &lt;strong&gt;Availability&lt;/strong&gt;<br />                            &lt;span&gt;&lt;i class=&quot;fa fa-check-square-o&quot;&gt;&lt;/i&gt; in stock&lt;/span&gt;<br />                        &lt;/div&gt;<br />                    &lt;/div&gt;<br />                    &lt;!-- === right-column === --&gt;<br />                    &lt;div class=&quot;col-sm-6&quot;&gt;<br />                        &lt;div class=&quot;info-box&quot;&gt;<br />                            &lt;strong&gt;Available Colors&lt;/strong&gt;<br />                            &lt;div class=&quot;product-colors clearfix&quot;&gt;<br />                                &lt;span class=&quot;color-btn color-btn-red&quot;&gt;&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-blue checked&quot;&gt;&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-green&quot;&gt;&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-gray&quot;&gt;&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-biege&quot;&gt;&lt;/span&gt;<br />                            &lt;/div&gt;<br />                        &lt;/div&gt;<br />                        &lt;div class=&quot;info-box&quot;&gt;<br />                            &lt;strong&gt;Choose size&lt;/strong&gt;<br />                            &lt;div class=&quot;product-colors clearfix&quot;&gt;<br />                                &lt;span class=&quot;color-btn color-btn-biege&quot;&gt;S&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-biege checked&quot;&gt;M&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-biege&quot;&gt;XL&lt;/span&gt;<br />                                &lt;span class=&quot;color-btn color-btn-biege&quot;&gt;XXL&lt;/span&gt;<br />                            &lt;/div&gt;<br />                        &lt;/div&gt;<br />                    &lt;/div&gt;<br />                &lt;/div&gt; &lt;!--/row--&gt;<br />            &lt;/div&gt; &lt;!--/product-info-wrapper--&gt;<br />        &lt;/div&gt; &lt;!--/popup-content--&gt;<br />        &lt;!-- === product-popup-footer === --&gt;<br />        &lt;div class=&quot;popup-table&quot;&gt;<br />            &lt;div class=&quot;popup-cell&quot;&gt;<br />                &lt;div class=&quot;price&quot;&gt;<br />                    &lt;span class=&quot;h3&quot;&gt;$ 1999,00 &lt;small&gt;$ 2999,00&lt;/small&gt;&lt;/span&gt;<br />                &lt;/div&gt;<br />            &lt;/div&gt;<br />            &lt;div class=&quot;popup-cell&quot;&gt;<br />                &lt;div class=&quot;popup-buttons&quot;&gt;<br />                    &lt;a href=&quot;product.html&quot;&gt;&lt;span class=&quot;icon icon-eye&quot;&gt;&lt;/span&gt; &lt;span class=&quot;hidden-xs&quot;&gt;View more&lt;/span&gt;&lt;/a&gt;<br />                    &lt;a href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;icon icon-cart&quot;&gt;&lt;/span&gt; &lt;span class=&quot;hidden-xs&quot;&gt;Buy&lt;/span&gt;&lt;/a&gt;<br />                &lt;/div&gt;<br />            &lt;/div&gt;<br />        &lt;/div&gt;<br />    &lt;/div&gt; &lt;!--/product--&gt;<br />&lt;/div&gt; &lt;!--popup-main--&gt;</code>
+            </pre>
+
+            <h4 class="subtitle">Initalize Popup</h4>
+
+            <pre>
+            <code>// Main popup<br />// ----------------------------------------------------------------<br /><br />$(&#39;.mfp-open&#39;).magnificPopup({<br />    type: &#39;inline&#39;,<br />    fixedContentPos: false,<br />    fixedBgPos: true,<br />    overflowY: &#39;auto&#39;,<br />    closeBtnInside: true,<br />    preloader: false,<br />    midClick: true,<br />    removalDelay: 300,<br />    mainClass: &#39;my-mfp-zoom-in&#39;,<br />    callbacks: {<br />        open: function () {<br />            // wait on popup initalization<br />            // then load owl-carousel<br />            $(&#39;.popup-main .owl-carousel&#39;).hide();<br />            setTimeout(function () {<br />                $(&#39;.popup-main .owl-carousel&#39;).slideDown();<br />            }, 500);<br />        }<br />    }<br />});</code>
+            </pre>
+        </div>
+
+        <!-- #################### Product filters #################### -->
+
+        <div id="filters">
+
+            <h2 class="title">Product filters with Isotope</h2>
+
+            <h4 class="subtitle">Initalize filters</h4>
+
+            <pre>
+            <code><br />$(function () {<br />    var price = 0;<br />    var $products = $(&quot;#products&quot;);<br />    var $checkboxes = $(&quot;#filters input&quot;);<br />    var $sortPrice = $(&quot;#sort-price&quot;);<br />    var filters = [];<br /><br />    $(&quot;.item&quot;).addClass(&quot;show-me&quot;);<br />    filters.push(&quot;.show-me&quot;);<br /><br />    // Sort products<br />    // --------------------------------------<br /><br />    $products.isotope({<br />        itemSelector: &#39;.item&#39;,<br />        getSortData: {<br />            number: &#39;.price parseInt&#39;<br />        },<br />        sortBy: &#39;number&#39;<br />    });<br /><br />    // Checkboxes &amp; radiobuttons<br />    // --------------------------------------<br /><br />    $sortPrice.on(&#39;change&#39;, function () {<br />        var order = $(&#39;option:selected&#39;, this).attr(&#39;data-option-value&#39;);<br />        var valAscending = (order == &quot;asc&quot;);<br /><br />        $products.isotope({<br />            itemSelector: &#39;.item&#39;,<br />            getSortData: {<br />                number: &#39;.price parseInt&#39;<br />            },<br />            sortBy: &#39;number&#39;,<br />            sortAscending: valAscending,<br />            filter: filters<br />        });<br /><br />    });<br /><br />    // Checkboxes &amp; radiobuttons<br />    // --------------------------------------<br /><br />    $checkboxes.on(&#39;change&#39;, function () {<br />        filters = [];<br />        filters.push(&quot;.show-me&quot;);<br />        $checkboxes.filter(&#39;:checked&#39;).each(function () {<br />            filters.push(this.value);<br />        });<br /><br />        filters = filters.join(&#39;&#39;);<br />        $products.isotope({<br />            filter: filters<br />        });<br /><br />    });<br /><br />    // Range slider<br />    // --------------------------------------<br /><br />    $(&quot;#range-price-slider&quot;).ionRangeSlider({<br />        type: &quot;double&quot;,<br />        min: 0,<br />        max: 4000,<br />        from: 150,<br />        to: 3800,<br />        prefix: &quot;$&quot;,<br />        onChange: function (data) {<br /><br />            $(&quot;.item&quot;).each(function () {<br /><br />                price = parseInt($(this).find(&quot;.price&quot;).text(), 10);<br /><br />                if (data.from &lt;= price &amp;&amp; data.to &gt;= price) {<br />                    $(this).addClass(&#39;show-me&#39;);<br />                }<br />                else {<br />                    $(this).removeClass(&#39;show-me&#39;);<br />                }<br />            });<br /><br />            $products.isotope({<br />                itemSelector: &#39;.item&#39;,<br />                filter: filters<br />            });<br />        }<br />    });<br /><br />});</code>    
+            </pre>
+
+            <h4 class="subtitle">Isotope</h4>
+
+            <p>Product filters are now working with Ispotope plugin. For more documentation about Istotope filtering visit <a href="https://isotope.metafizzy.co/">this page</a>.</p>
+
+        </div>
+
+        <!-- #################### Contact #################### -->
+
+        <div id="contact">
+            <h2 class="title">Contact form</h2>
+            <p>On line 29 set receipt email in <strong>sendmail.php</strong> file</p>
+
+            <pre>
+                <code class="hljs">&lt;?php<br>// Receiving variables<br>@$pfw_ip= $_SERVER[&#39;REMOTE_ADDR&#39;];<br>@$Name = addslashes($_POST[&#39;Name&#39;]);<br>@$Email = addslashes($_POST[&#39;Email&#39;]);<br>@$Subject = addslashes($_POST[&#39;Subject&#39;]);<br>@$Comment = addslashes($_POST[&#39;Comment&#39;]);<br><br>// Name validation<br>if (strlen($Name) == 0 ){<br>header(&quot;Location: contact-failed.html&quot;);<br>exit;<br>}<br>// Email validation<br>if (strlen($Email) == 0 ){<br>header(&quot;Location: contact-failed.html&quot;);<br>exit;<br>}<br>// Comment validation<br>if (strlen($Comment) == 0 ){<br>header(&quot;Location: contact-failed.html&quot;);<br>exit;<br>}<br><br>// Sending Email to form owner<br>$form_header = &quot;From: $Name\n $Email\n&quot;<br> . &quot;Reply-To: $Email\n&quot;;<br><br>// This is subject<br>$form_subject = &quot;$Subject\n&quot;;<br><br>// Add receipt email<br>$form_emailto = &quot;EMAIL@DOMAIN.COM&quot;; //  &lt; ====== add your email<br><br> // Email content<br>$form_message = &quot;Visitor&#39;s IP: $pfw_ip\n&quot;<br>. &quot;\n&quot;<br>. &quot;Name:\n&quot;<br>. &quot;$Name\n&quot;<br>. &quot;\n&quot;<br>. &quot;Email:\n&quot;<br>. &quot;$Email\n&quot;<br>. &quot;\n&quot;<br>. &quot;Comment:\n&quot;<br>. &quot;$Comment\n&quot;;<br><br>// Generate email<br>@mail($form_emailto, $form_subject ,$form_message ,$form_header ) ;<br><br>// Redirect to success page<br>header(&quot;Location: contact-success.html&quot;);<br>// end<br>?&gt;</code>
+            </pre>
+
+            <h4 class="subtitle">Setup success & failed messages</h4>
+
+            <p>Use <u>contact-success.html</u> & <u>contact-failed.html</u> to edit alerts.</p>
+
+            <p><strong>Note:</strong> Mail cannot be sent from your local machine. Upload all files on your hosting account.</p>
+        </div>
+
+        <!-- #################### Credits #################### -->
+
+        <div id="credits">
+            <h2 class="title">Credits</h2>
+
+            <h4 class="subtitle">Images</h4>
+
+            <ul>
+                <li><a target="_blank" href="https://unsplash.com/">Unsplash</a></li>
+                <li><a target="_blank" href="https://www.pexels.com/">Pexels</a></li>
+                <li><a target="_blank" href="https://pixabay.com/en/">Pixabay</a></li>
+                <li><a target="_blank" href="https://morguefile.com/">Morguefile</a></li>
+            </ul>
+
+            <h4 class="subtitle">jQuery</h4>
+
+            <ul>
+                <li><a target="_blank" href="http://www.landmarkmlp.com/js-plugin/owl.carousel/">Owl Carousel</a></li>
+                <li><a target="_blank" href="http://dimsemenov.com/plugins/magnific-popup/">Magnific popup</a></li>
+                <li><a target="_blank" href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Ion RangeSlider</a></li>
+            </ul>
+
+            <h4 class="subtitle">CSS</h4>
+
+            <ul>
+                <li><a target="_blank" href="http://www.landmarkmlp.com/js-plugin/owl.carousel/">Bootstrap</a></li>
+                <li><a target="_blank" href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+                <li><a target="_blank" href="https://linearicons.com/">Linear icons</a></li>
+                <li><a target="_blank" href="https://fonts.google.com/specimen/Montserrat">Montserrat - Google Fonts</a></li>
+                <li><a target="_blank" href="https://fonts.google.com/specimen/Roboto">Roboto - Google Fonts</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
