@@ -8,7 +8,7 @@ $this->title = 'My Yii Application';
 //$this->registerJsFile('@web/plugins/morris/morris.js',['depends'=>['backend\assets\AppAsset']]);
 //$this->registerJsFile('@web/plugins/functions/morris-init.js',['depends'=>['backend\assets\AppAsset']]);
 ?>
-<div class="content">
+
     <!-- Small boxes (Stat box) -->
     <div class="row">
         <div class="col-12">
@@ -287,77 +287,5 @@ $this->title = 'My Yii Application';
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
                 </div>
             </div>
-            <div>
-                <div class="soci-wid-box bg-facebook m-b-3">
-                    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item">
-                                <div class="col-lg-12 text-center">
-                                    <div class="sco-icon"><i class="ti-facebook"></i></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante.</p>
-                                    <p class="text-italic pt-1">- John Doe -</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-lg-12 text-center">
-                                    <div class="sco-icon"><i class="ti-facebook"></i></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante.</p>
-                                    <p class="text-italic pt-1">- John Doe -</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item active">
-                                <div class="col-lg-12 text-center">
-                                    <div class="sco-icon"><i class="ti-facebook"></i></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sed cursus ante.</p>
-                                    <p class="text-italic pt-1">- John Doe -</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-                </div>
-            </div>
-            <div>
-                <!-- Widget: user widget style 1 -->
-                <div class="box box-widget widget-user-2">
-                    <!-- Add the bg color to the header using any of the bg-* classes -->
-                    <div class="widget-user-header bg-yellow">
-                        <h3>My Contacts</h3>
-                        <h5>Checkout my contacts here</h5>
-                    </div>
-                    <ul class="products-list product-list-in-box">
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img1.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="#" class="product-title">Florence Douglas</a> <span class="product-description"> <a href="#">florencedouglas@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img2.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Andrew Florence </a> <span class="product-description"> <a href="#">andrewflorence@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img3.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Florence Sr.</a> <span class="product-description"> <a href="#">florencesr.@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img4.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Andrew Florence </a> <span class="product-description"> <a href="#">andrewflorence@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img3.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Florence Sr.</a> <span class="product-description"> <a href="#">florencesr.@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img5.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Florence Sr.</a> <span class="product-description"> <a href="#">florencesr.@gmail.com</a> </span> </div>
-                        </li>
-                        <!-- /.item -->
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img"> <img src="/img/img1.jpg" alt="Product Image"> </div>
-                            <div class="product-info"> <a href="javascript:void(0)" class="product-title">Florence Sr.</a> <span class="product-descri
+        </div>
+

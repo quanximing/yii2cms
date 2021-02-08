@@ -31,7 +31,9 @@ use yii\widgets\Breadcrumbs;
         </div>
 
         <!-- Main content -->
+        <div class="content">
         <?= $content ?>
+        </div>
         <!-- /.content -->
 </div>
 
