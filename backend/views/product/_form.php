@@ -1368,7 +1368,7 @@ $('#attribute tbody tr').each(function(index, element) {
     var image_row =<?=isset($img_num)?$img_num:0?>;
     function addImage() {
         html  = '<tr id="image-row' + image_row + '">';
-        html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?=\Yii::$app->params['image_url']?>/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="<?=\Yii::$app->params['image_url']?>/image/cache/no_image-100x100.png" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+        html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?=\Yii::$app->params['image_url']?>/images/cache/no_image-100x100.png" alt="" title="" data-placeholder="<?=\Yii::$app->params['image_url']?>/images/cache/no_image-100x100.png" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
         html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="" placeholder="排序" class="form-control" /></td>';
         html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="移除" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
         html += '</tr>';
