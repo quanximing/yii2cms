@@ -141,7 +141,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
                             <tr id="image-row<?=$k?>">
                                 <td class="text-left">
                                     <a href="" id="thumb-image<?=$k?>" data-toggle="image" class="img-thumbnail">
-                                        <img src="<?=$res_image->resize($image->image,100,100)?>" alt="" title="" data-placeholder="http://m.800czb.com/image/cache/no_image-100x100.png">
+                                        <img src="<?=$res_image->resize($image->image,100,100)?>" alt="" title="" data-placeholder="<?=\Yii::$app->params['image_url']?>/image/cache/no_image-100x100.png">
                                     </a><input type="hidden" name="product_image[<?=$k?>][image]" value="<?=$image->image?>" id="input-image2"></td>
                                 <td class="text-right"><input type="text" name="product_image[<?=$k?>][sort_order]" value="<?=$image->sort_order?>" placeholder="排序" class="form-control"></td>
                                 <td class="text-left"><button type="button" onclick="$('#image-row<?=$k?>').remove();" data-toggle="tooltip" title="移除" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
@@ -1368,7 +1368,7 @@ $('#attribute tbody tr').each(function(index, element) {
     var image_row =<?=isset($img_num)?$img_num:0?>;
     function addImage() {
         html  = '<tr id="image-row' + image_row + '">';
-        html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="http://m.800czb.com/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="http://m.800czb.com/image/cache/no_image-100x100.png" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+        html += '  <td class="text-left"><a href="" id="thumb-image' + image_row + '"data-toggle="image" class="img-thumbnail"><img src="<?=\Yii::$app->params['image_url']?>/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="<?=\Yii::$app->params['image_url']?>/image/cache/no_image-100x100.png" /></a><input type="hidden" name="product_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
         html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]" value="" placeholder="排序" class="form-control" /></td>';
         html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + '\').remove();" data-toggle="tooltip" title="移除" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
         html += '</tr>';

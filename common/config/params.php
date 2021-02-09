@@ -1,6 +1,6 @@
 <?php
 return [
-    'image_url'=>'https://img.k99b.com',
+    'image_url'=>'http://img.k99b.com',
     'website_author' => 'admin@example.com',
     'website_description' => 'admin@example.com',
     'adminEmail' => 'admin@example.com',
