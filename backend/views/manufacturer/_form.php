@@ -20,7 +20,7 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
     <div class="form-group field-bmanufacturer-">
         <?= Html::hiddenInput('Bmanufacturer[image]',$model->image) ?>
         <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-            <img src="<?=!empty($model->image)?$res_image->resize($model->image,100,100):Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($model->image)?$model->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+            <img src="<?=!empty($model->image)?$res_image->resize($model->image,100,100):Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($model->image)?$model->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
         </a>
     </div>
     <?= $form->field($model, 'config_input')->textarea(['rows' => 6]) ?>

@@ -116,7 +116,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
                     <tr>
                       <td class="text-left">
                           <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-                              <img src="<?=isset($product->image)?$res_image->resize($product->image,100,100):Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+                              <img src="<?=isset($product->image)?$res_image->resize($product->image,100,100):Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
                           </a>
                           <?php //=$form->field($product,'image')->hiddenInput(['id'=>'input-image']) ?>
                           <?=Html::hiddenInput('Bproduct[image]',$product->image,['id'=>'input-image'])?>
@@ -572,7 +572,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
 	                        <!--<td><input type="text" class="form-control"/></td>-->
 	                        <td class="text-left">
 	                            <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-	                                <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+	                                <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
 	                            </a>
 	                            <?php //=$form->field($product,'image')->hiddenInput(['id'=>'input-image']) ?>
 	                            <?=Html::hiddenInput('group_value[image]',$product->image,['id'=>'input-image'])?>
@@ -750,8 +750,8 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
 				                        <td><input type="text" class="form-control" value="${value.key}" /></td>
 				                        <td class="text-left">
 				                            <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-				                                <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>"
-				                                	alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+				                                <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>"
+				                                	alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
 				                            </a>
 				                            <?php //=$form->field($product,'image')->hiddenInput(['id'=>'input-image']) ?>
 				                            <?=Html::hiddenInput('group_value[image]',$product->image,['id'=>'input-image'])?>
@@ -995,7 +995,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
 			    <td><input type="text" class="form-control"/></td>
 			    <td class="text-left">
 			        <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-			            <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+			            <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
 			        </a>
 			        <?php //=$form->field($product,'image')->hiddenInput(['id'=>'input-image']) ?>
 			        <?=Html::hiddenInput('group_value[image]',$product->image,['id'=>'input-image'])?>
@@ -1020,7 +1020,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
 			    <td><input type="text" class="form-control"/></td>
 			    <td class="text-left">
 			        <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-			            <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+			            <img style="width: 27px;" src="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($product->image)?$product->image:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
 			        </a>
 			        <?php //=$form->field($product,'image')->hiddenInput(['id'=>'input-image']) ?>
 			        <?=Html::hiddenInput('group_value[image]',$product->image,['id'=>'input-image'])?>

@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ],
                 'value' => function ($model) {
-                    return Yii::$app->params['imgage_url'].'/images/'.$model->image;
+                    return Yii::$app->params['image_url'].'/images/'.$model->image;
                 }
             ],
             'product_id',
@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'filter' => Yii::$app->params['product_is_fx'],
             ],
-            
+
             'viewed',
             'sort_order',
             //'date_added',

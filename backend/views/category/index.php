@@ -39,7 +39,7 @@ $status =['0'=>'停用','1'=>'启用'];
                 'attribute' => 'top',
                 'value' => function ($model) {
                     if(!empty($model->top)){
-                        return Yii::$app->params['category_top'][$model->top];
+                        return Yii::$app->params['category_top'][$model->top]??'';
                     }
                 },
                 'filter' => Yii::$app->params['category_top'],

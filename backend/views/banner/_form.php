@@ -75,7 +75,7 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
                                 </td>
                                 <td class="text-center">
                                     <a href="" id="thumb-image{{ image_row }}" data-toggle="image" class="img-thumbnail">
-                                        <img src="<?=!empty($banner_image['image'])?$res_image->resize($banner_image['image'],100,100):Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($banner_image['image'])?$banner_image['image']:Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" />
+                                        <img src="<?=!empty($banner_image['image'])?$res_image->resize($banner_image['image'],100,100):Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($banner_image['image'])?$banner_image['image']:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
                                     </a>
                                     <input type="hidden" name="banner_image[<?=$k?>][image]" value="<?=$banner_image['image']?>" id="input-image<?=$k?>" />
                                 </td>
@@ -116,7 +116,7 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
         html  = '<tr id="image-row' + image_row + '">';
         html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][title]" value="" placeholder="标题" class="form-control" /></td>';
         html += '  <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="链接" class="form-control" /></td>';
-        html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo Yii::$app->params['imgage_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="" /></a><input type="hidden" name="banner_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+        html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="" /></a><input type="hidden" name="banner_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
         html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="排序" class="form-control" /></td>';
         html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="删除" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
         html += '</tr>';

@@ -17,11 +17,11 @@ class image {
 
 		if (!is_file($dir_image . $image_new) || (filemtime($dir_image . $image_old) > filemtime($dir_image . $image_new))) {
 			list($width_orig, $height_orig, $image_type) = getimagesize($dir_image . $image_old);
-				 
-			if (!in_array($image_type, array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF))) { 
+
+			if (!in_array($image_type, array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF))) {
 				return $dir_image . $image_old;
 			}
- 
+
 			$path = '';
 
 			$directories = explode('/', dirname($image_new));
@@ -43,7 +43,7 @@ class image {
 			}
 		}
 
-		return \Yii::$app->params['imgage_url'] . '/images/' . $image_new;
+		return \Yii::$app->params['image_url'] . '/images/' . $image_new;
 
 	}
 }

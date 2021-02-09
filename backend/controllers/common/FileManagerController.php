@@ -104,7 +104,7 @@ class FileManagerController extends Controller {
 					'name'  => implode(' ', $name),
 					'type'  => 'image',
 					'path'  => iconv_substr($image, mb_strlen(Yii::getAlias('@image'))),
-					'href'  => Yii::$app->params['imgage_url'].'/images' . iconv_substr($image, mb_strlen(Yii::getAlias('@image')))
+					'href'  => Yii::$app->params['image_url'].'/images' . iconv_substr($image, mb_strlen(Yii::getAlias('@image')))
 				);
 			}
 		}
