@@ -12,9 +12,7 @@ class image {
 		$extension = pathinfo($filename, PATHINFO_EXTENSION);
 
 		$image_old = $filename;
-
 		$image_new = 'cache/' . mb_substr($filename, 0, iconv_strpos($filename, '.',0,'UTF-8')) . '-' . $width . 'x' . $height . '.' . $extension;
-
 		if (!is_file($dir_image . $image_new) || (filemtime($dir_image . $image_old) > filemtime($dir_image . $image_new))) {
 			list($width_orig, $height_orig, $image_type) = getimagesize($dir_image . $image_old);
 
@@ -43,7 +41,7 @@ class image {
 			}
 		}
 
-		return \Yii::$app->params['image_url'] . '/images/' . $image_new;
+		return \Yii::$app->params['image_url'] . '/' . $image_new;
 
 	}
 }

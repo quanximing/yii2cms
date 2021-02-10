@@ -23,10 +23,10 @@ class FileManagerController extends Controller {
 		// Make sure we have the correct directory
 		if (Yii::$app->request->get('directory')) {
             $data['directory'] =urlencode(Yii::$app->request->get('directory'));
-			$directory = rtrim(Yii::getAlias('@image') . '/catalog/' . str_replace('*', '', Yii::$app->request->get('directory')), '/');
+			$directory = rtrim(Yii::getAlias('@image') . '/images/catalog/' . str_replace('*', '', Yii::$app->request->get('directory')), '/');
 		} else {
             $data['directory'] ='';
-			$directory = Yii::getAlias('@image') . '/catalog';
+			$directory = Yii::getAlias('@image') . '/images/catalog';
 		}
 
 		if (Yii::$app->request->get('page')) {
@@ -40,7 +40,7 @@ class FileManagerController extends Controller {
 
 		$data['images'] = array();
 
-		if (substr(str_replace('\\', '/', realpath($directory) . '/' . $filter_name), 0, strlen(Yii::getAlias('@image') . '/catalog')) == str_replace('\\', '/', Yii::getAlias('@image') . '/catalog')) {
+		if (substr(str_replace('\\', '/', realpath($directory) . '/' . $filter_name), 0, strlen(Yii::getAlias('@image') . '/images/catalog')) == str_replace('\\', '/', Yii::getAlias('@image') . '/images/catalog')) {
 			// Get directories
 			$directories = glob($directory . '/' . $filter_name . '*', GLOB_ONLYDIR);
 
@@ -50,7 +50,6 @@ class FileManagerController extends Controller {
 
 			// Get files
 			$files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF,pdf}', GLOB_BRACE);
-
 			if (!$files) {
 				$files = array();
 			}
@@ -97,7 +96,6 @@ class FileManagerController extends Controller {
 					'href'  =>Url::toRoute(['/common/file-manager/?'. 'directory=' . urlencode(iconv_substr($image, mb_strlen(Yii::getAlias('@image') . 'catalog/'))) . $url])
 				);
 			} elseif (is_file($image)) {
-
                 $im = new image();
 				$data['images'][] = array(
 					'thumb' => $im->resize(iconv_substr($image, mb_strlen(Yii::getAlias('@image'))), 100, 100),
@@ -187,14 +185,14 @@ class FileManagerController extends Controller {
 
 		// Make sure we have the correct directory
 		if (Yii::$app->request->get('directory')) {
-			$directory = rtrim(Yii::getAlias('@image') . '/catalog/' . Yii::$app->request->get('directory'), '/');
+			$directory = rtrim(Yii::getAlias('@image') . '/images/catalog/' . Yii::$app->request->get('directory'), '/');
 		} else {
-			$directory = Yii::getAlias('@image') . '/catalog';
+			$directory = Yii::getAlias('@image') . '/images/catalog';
 		}
 
 
 		// Check its a directory
-		if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(Yii::getAlias('@image') . '/catalog')) != str_replace('\\', '/', Yii::getAlias('@image') . '/catalog')) {
+		if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(Yii::getAlias('@image') . '/images/catalog')) != str_replace('\\', '/', Yii::getAlias('@image') . '/images/catalog')) {
 			$json['error'] = '目录错误';
 		}
 
@@ -278,15 +276,14 @@ class FileManagerController extends Controller {
 		$json = array();
 
         if (Yii::$app->request->get('directory')) {
-            $directory = rtrim(Yii::getAlias('@image') . 'catalog/' . Yii::$app->request->get('directory'), '/');
+            $directory = rtrim(Yii::getAlias('@image') . '/images/catalog/' . Yii::$app->request->get('directory'), '/');
         } else {
-            $directory = Yii::getAlias('@image') . '/catalog';
+            $directory = Yii::getAlias('@image') . '/images/catalog';
         }
 
-
         // Check its a directory
-        if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(Yii::getAlias('@image') . '/catalog')) != str_replace('\\', '/', Yii::getAlias('@image') . '/catalog')) {
-            $json['error'] = '目录错误';
+        if (!is_dir($directory) || substr(str_replace('\\', '/', realpath($directory)), 0, strlen(Yii::getAlias('@image') . '/images/catalog')) != str_replace('\\', '/', Yii::getAlias('@image') . '/images/catalog')) {
+            $json['error'] = '目录错误1';
         }
 
 		if (Yii::$app->request->isPost) {
@@ -300,7 +297,7 @@ class FileManagerController extends Controller {
 
 			// Check if directory already exists or not
 			if (is_dir($directory . '/' . $folder)) {
-				$json['error'] = '目录错误';
+				$json['error'] = '目录已经存在';
 			}
 		}
 

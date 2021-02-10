@@ -14,7 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use common\models\BannerImage;
 /**
  * Site controller
  */
@@ -74,7 +74,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $home_banner = BannerImage::findAll(['banner_id'=>1]);
+        return $this->render('index',[
+            'hbanner'=>$home_banner
+        ]);
     }
 
     /**
