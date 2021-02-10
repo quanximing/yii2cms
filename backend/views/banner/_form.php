@@ -57,6 +57,7 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
                                 <td class="text-left">标题</td>
                                 <td class="text-left">链接</td>
                                 <td class="text-center">图像</td>
+                                <td class="text-center">文字文本</td>
                                 <td class="text-right">排序</td>
                                 <td></td>
                             </tr>
@@ -78,6 +79,9 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
                                         <img src="<?=!empty($banner_image['image'])?$res_image->resize($banner_image['image'],100,100):Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="<?=isset($banner_image['image'])?$banner_image['image']:Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" />
                                     </a>
                                     <input type="hidden" name="banner_image[<?=$k?>][image]" value="<?=$banner_image['image']?>" id="input-image<?=$k?>" />
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" name="banner_image[<?=$k?>][text]" value="<?=$banner_image['text']?> " placeholder="文本文字" class="form-control" />
                                 </td>
                                 <td class="text-right" style="width: 10%;">
                                     <input type="text" name="banner_image[<?=$k?>][sort_order]" value="<?=$banner_image['sort_order']?> " placeholder="排序" class="form-control" />
@@ -117,6 +121,7 @@ $this->registerJsFile('@web/js/common.js',['depends'=>['backend\assets\AppAsset'
         html += '  <td class="text-left"><input type="text" name="banner_image[' + image_row + '][title]" value="" placeholder="标题" class="form-control" /></td>';
         html += '  <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[' + image_row + '][link]" value="" placeholder="链接" class="form-control" /></td>';
         html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo Yii::$app->params['image_url'].'/images/cache/no_image-100x100.png'?>" alt="" title="" data-placeholder="" /></a><input type="hidden" name="banner_image[' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+        html += ' <td class="text-center"><input type="text" name="banner_image[' + image_row + '][text]" value="" placeholder="文本文字" class="form-control" /> </td>';
         html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="排序" class="form-control" /></td>';
         html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="删除" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
         html += '</tr>';

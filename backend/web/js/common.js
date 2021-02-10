@@ -40,10 +40,10 @@ $(document).ready(function() {
     // tooltips on hover
     /*$('[data-toggle=\'tooltip\']').tooltip({container: 'body', html: true});
 
-    // Makes tooltips work on ajax generated content
-    $(document).ajaxStop(function() {
-        $('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
-    });*/
+     // Makes tooltips work on ajax generated content
+     $(document).ajaxStop(function() {
+     $('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
+     });*/
 
     // https://github.com/opencart/opencart/issues/2595
     $.event.special.remove = {
@@ -139,10 +139,10 @@ $(document).ready(function() {
                     $('body').append('<div id="modal-image" class="modal">' + html + '</div>');
                     $('#modal-image').modal('show');
                     $('#modal-image').delegate('a.thumbnail', 'click', function(e) {
-                     e.preventDefault();
-                     $element.parent().find('img').attr('src',$(this).find('img').attr('src'));
-                     $element.parent().find('input').attr('value',$(this).parent().find('input').val());
-                     $('#modal-image').modal('hide');
+                        e.preventDefault();
+                        $element.parent().find('img').attr('src',$(this).find('img').attr('src'));
+                        $element.parent().find('input').attr('value',$(this).parent().find('input').val());
+                        $('#modal-image').modal('hide');
                     });
                 }
             });

@@ -11,6 +11,7 @@ use Yii;
  * @property int $banner_id
  * @property int $language_id
  * @property string $title
+ * @property string $text
  * @property string $link
  * @property string $image
  * @property int $sort_order
@@ -34,7 +35,7 @@ class BannerImage extends \yii\db\ActiveRecord
             [['banner_id', 'language_id', 'title', 'image'], 'required'],
             [['banner_id', 'language_id', 'sort_order'], 'integer'],
             [['title'], 'string', 'max' => 64],
-            [['link', 'image'], 'string', 'max' => 255],
+            [['link', 'image','text'], 'string', 'max' => 255],
         ];
     }
 
@@ -48,9 +49,10 @@ class BannerImage extends \yii\db\ActiveRecord
             'banner_id' => 'Banner ID',
             'language_id' => 'Language ID',
             'title' => 'Title',
-            'link' => 'Link',
-            'image' => 'Image',
-            'sort_order' => 'Sort Order',
+            'text' => '文本文字',
+            'link' => '超链接',
+            'image' => '图片',
+            'sort_order' => '排序',
         ];
     }
 }
