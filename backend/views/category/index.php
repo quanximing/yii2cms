@@ -11,52 +11,58 @@ $this->title = '产品分类';
 $this->params['breadcrumbs'][] = $this->title;
 $status =['0'=>'停用','1'=>'启用'];
 ?>
-<div class="bcategory-index">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <?php echo Html::a('添加分类', ['create'], ['class' => 'btn btn-success']) ?>
+                <?php //echo $this->render('_search', ['model' => $searchModel,'type'=>$type,'status'=>$status,'suppliers'=>$supliers]); ?>
+            </div>
+            <div class="box-body" style="overflow:auto">
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <p>
-        <?= Html::a('添加分类', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+                <?= GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        'category_id',
+                        [
+                            'attribute' => '类别目录',
+                            'value' => function ($model) {
+                                $path = Bcategory::getCategory($model->category_id);
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            'category_id',
-            [
-                'attribute' => '类别目录',
-                'value' => function ($model) {
-                    $path = Bcategory::getCategory($model->category_id);
+                                return !empty($path['path'])?$path['path']:'' ;
+                            },
+                            'format'=>'raw',
+                            //'filter' => Yii::$app->params['category_top'],
+                        ],
+                        'categoryDescription.name',
+                        //'parent_id',
+                        [
+                            'attribute' => 'top',
+                            'value' => function ($model) {
+                                if(!empty($model->top)){
+                                    return Yii::$app->params['category_top'][$model->top]??'';
+                                }
+                            },
+                            'filter' => Yii::$app->params['category_top'],
+                        ],
+                        'column',
+                        'sort_order',
+                        [
+                            'attribute' => 'status',
+                            'value' => function ($model) {
+                                return Yii::$app->params['category_status'][$model->status];
+                            },
+                            'filter' => Yii::$app->params['category_status'],
+                        ],
+                        'date_added',
+                        //'date_modified',
 
-                    return !empty($path['path'])?$path['path']:'' ;
-                },
-                'format'=>'raw',
-                //'filter' => Yii::$app->params['category_top'],
-            ],
-            'categoryDescription.name',
-            //'parent_id',
-            [
-                'attribute' => 'top',
-                'value' => function ($model) {
-                    if(!empty($model->top)){
-                        return Yii::$app->params['category_top'][$model->top]??'';
-                    }
-                },
-                'filter' => Yii::$app->params['category_top'],
-            ],
-            'column',
-            'sort_order',
-            [
-                'attribute' => 'status',
-                'value' => function ($model) {
-                    return Yii::$app->params['category_status'][$model->status];
-                },
-                'filter' => Yii::$app->params['category_status'],
-            ],
-            'date_added',
-            //'date_modified',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                        ['class' => 'yii\grid\ActionColumn'],
+                    ],
+                ]); ?>
+            </div>
+        </div>
+    </div>
 </div>
+

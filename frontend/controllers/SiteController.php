@@ -74,10 +74,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $home_banner = BannerImage::findAll(['banner_id'=>1]);
-        return $this->render('index',[
-            'hbanner'=>$home_banner
-        ]);
+
+        return $this->render('index',[]);
     }
 
     /**

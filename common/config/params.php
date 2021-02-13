@@ -9,8 +9,8 @@ return [
     'senderName' => 'Example.com mailer',
     'user.passwordResetTokenExpire' => 3600,
     'user.passwordMinLength' => 8,
-    'category_status'=>['0'=>'停用','1'=>'启用'],
-    'product_status'=>['0'=>'停用','1'=>'启用'],
-    'product_is_fx'=>['0'=>'停用','1'=>'启用'],//product_is_fx
-    'category_top' =>[1=>'是',0=>'否'],
+    'category_status'=>[0=>'停用',1=>'启用'],
+    'product_status'=>[0=>'停用',1=>'启用'],
+    'product_is_fx'=>[0=>'停用',1=>'启用'],//product_is_fx
+    'category_top' =>[0=>'否',1=>'是'],
 ];

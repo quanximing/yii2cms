@@ -6,16 +6,27 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Bcategory */
 
-$this->title = 'Create Bcategory';
-$this->params['breadcrumbs'][] = ['label' => 'Bcategories', 'url' => ['index']];
+$this->title = '添加产品分类';
+$this->params['breadcrumbs'][] = ['label' => '分类列表', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="bcategory-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+            </div>
+            <div class="box-body" style="overflow:auto">
 
+                <?= $this->render('_form', [
+                    'model' => $model,
+                ]) ?>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+

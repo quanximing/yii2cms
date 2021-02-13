@@ -9,8 +9,17 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\MobelAsset;
 use common\widgets\Alert;
-
+use common\models\Category;
+use common\models\BannerImage;
 MobelAsset::register($this);
+$home_banner = BannerImage::findAll(['banner_id'=>1]);
+
+$product_cate = Category::find()->joinWith('categoryDescription')->andwhere(['top'=>1,'status'=>1,'parent_id'=>0])->all();
+//print_r($product_cate);
+/*foreach($product_cate as $k => $v){
+ var_dump($v->categoryDescription->name  );
+}*/
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -48,11 +57,47 @@ MobelAsset::register($this);
 
 <div class="page-loader"></div>
 <div class="wrapper">
-
     <?= $this->render(
         'navbar.php',
-        ['param' =>'' ]
+        ['product_cate'=>$product_cate ]
     ) ?>
+    <?php
+    if(Yii::$app->controller->action->id === 'index' && Yii::$app->controller->id ==='site'){
+        echo $this->render(
+            'header_content.php',
+            ['hbanner'=>$home_banner,'product_cate'=>$product_cate ]
+        ) ;
+    }elseif(Yii::$app->controller->action->id === 'index' && Yii::$app->controller->id ==='products'){ ?>
+        <section class="main-header" style="background-image:url(/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">Shop</h1>
+                    <?= Breadcrumbs::widget(
+                        [
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'options'=>['class'=>'breadcrumb breadcrumb-inverted'],
+                        ]
+                    ) ?>
+                </div>
+            </header>
+        </section>
+     <?php }else{ ?>
+        <section class="main-header" style="background-image:url(/images/gallery-3.jpg)">
+            <header>
+                <div class="container">
+                    <h1 class="h2 title">Shop</h1>
+                    <?= Breadcrumbs::widget(
+                        [
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'options'=>['class'=>'breadcrumb breadcrumb-inverted'],
+                        ]
+                    ) ?>
+                </div>
+            </header>
+        </section>
+   <?php }
+    ?>
+
 
     <?= $content ?>
     <!-- ================== Footer  ================== -->

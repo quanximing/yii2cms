@@ -5,10 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Bcategory */
 
-$this->title = 'Update Bcategory: {nameAttribute}';
+$this->title = '修改产品分类';
 $this->params['breadcrumbs'][] = ['label' => 'Bcategories', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->category_id, 'url' => ['view', 'id' => $model->category_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '修改';
 ?>
 <div class="bcategory-update">
 

@@ -62,6 +62,7 @@ class Category extends \yii\db\ActiveRecord
         return $this->hasOne(CategoryDescription::className(), ['category_id' => 'category_id']);
     }
 
+
     public function getCategoryPath(){
         return $this->hasMany(CategoryPath::className(),['category_id' => 'category_id']);
     }
