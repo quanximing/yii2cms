@@ -126,13 +126,13 @@ class Mproduct extends Product
             }
 
             if (!empty($data['filter_name'])) {
-                $sql .= " OR LCASE(p.model) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.sku) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.upc) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.ean) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.jan) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.isbn) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
-                $sql .= " OR LCASE(p.mpn) = '" . $this->db->escape(utf8_strtolower($data['filter_name'])) . "'";
+                $sql .= " OR LCASE(p.model) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.sku) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.upc) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.ean) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.jan) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.isbn) = '" . utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.mpn) = '" . utf8_strtolower($data['filter_name']) . "'";
             }
 
             $sql .= ")";
@@ -140,9 +140,6 @@ class Mproduct extends Product
 
         if (!empty($data['filter_manufacturer_id'])) {
             $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
-        }
-        if (!empty($data['is_fx'])) {
-            $sql .= " AND p.is_fx = '" . (int)$data['is_fx'] . "'";
         }
 
         $sql .= " GROUP BY p.product_id";
@@ -176,6 +173,7 @@ class Mproduct extends Product
         }*/
 
         if (isset($data['start']) || isset($data['limit'])) {
+
             if ($data['start'] < 0) {
                 $data['start'] = 0;
             }
@@ -188,6 +186,7 @@ class Mproduct extends Product
         }
 
         $product_data = array();
+        //echo $sql;
         $query = Yii::$app->db->createCommand($sql)->queryAll();
 
         foreach ($query as $result) {
@@ -307,5 +306,107 @@ class Mproduct extends Product
         }
        // var_dump($data);
         return $data;
+    }
+
+    public function getTotalProducts($data = array()) {
+        $sql = "SELECT COUNT(DISTINCT p.product_id) AS total";
+
+        if (!empty($data['filter_category_id'])) {
+            if (!empty($data['filter_sub_category'])) {
+                $sql .= " FROM  category_path cp LEFT JOIN  product_to_category p2c ON (cp.category_id = p2c.category_id)";
+            } else {
+                $sql .= " FROM  product_to_category p2c";
+            }
+
+            if (!empty($data['filter_filter'])) {
+                $sql .= " LEFT JOIN  product_filter pf ON (p2c.product_id = pf.product_id) LEFT JOIN  product p ON (pf.product_id = p.product_id)";
+            } else {
+                $sql .= " LEFT JOIN  product p ON (p2c.product_id = p.product_id)";
+            }
+        } else {
+            $sql .= " FROM  product p";
+        }
+
+        $sql .= " LEFT JOIN  product_description pd ON (p.product_id = pd.product_id)  WHERE pd.language_id =1 AND p.status = '1' AND p.date_available <= NOW()";
+
+        if (!empty($data['filter_category_id'])) {
+            if (!empty($data['filter_sub_category'])) {
+                $sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
+            } else {
+                $sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
+            }
+
+            if (!empty($data['filter_filter'])) {
+                $implode = array();
+
+                $filters = explode(',', $data['filter_filter']);
+
+                foreach ($filters as $filter_id) {
+                    $implode[] = (int)$filter_id;
+                }
+
+                $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+            }
+        }
+
+        if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {
+            $sql .= " AND (";
+
+            if (!empty($data['filter_name'])) {
+                $implode = array();
+
+                $words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_name'])));
+
+                foreach ($words as $word) {
+                    $implode[] = "pd.name LIKE '%" .$word. "%'";
+                }
+
+                if ($implode) {
+                    $sql .= " " . implode(" AND ", $implode) . "";
+                }
+
+                if (!empty($data['filter_description'])) {
+                    $sql .= " OR pd.description LIKE '%" . $data['filter_name']. "%'";
+                }
+            }
+
+            if (!empty($data['filter_name']) && !empty($data['filter_tag'])) {
+                $sql .= " OR ";
+            }
+
+            if (!empty($data['filter_tag'])) {
+                $implode = array();
+
+                $words = explode(' ', trim(preg_replace('/\s+/', ' ', $data['filter_tag'])));
+
+                foreach ($words as $word) {
+                    $implode[] = "pd.tag LIKE '%" . $word . "%'";
+                }
+
+                if ($implode) {
+                    $sql .= " " . implode(" AND ", $implode) . "";
+                }
+            }
+
+            if (!empty($data['filter_name'])) {
+                $sql .= " OR LCASE(p.model) = '" .  utf8_strtolower($data['filter_name'])  . "'";
+                $sql .= " OR LCASE(p.sku) = '" .  utf8_strtolower($data['filter_name'])  . "'";
+                $sql .= " OR LCASE(p.upc) = '" .  utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.ean) = '" .  utf8_strtolower($data['filter_name'])  . "'";
+                $sql .= " OR LCASE(p.jan) = '" .  utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.isbn) = '" .  utf8_strtolower($data['filter_name']) . "'";
+                $sql .= " OR LCASE(p.mpn) = '" .  utf8_strtolower($data['filter_name']). "'";
+            }
+
+            $sql .= ")";
+        }
+
+        if (!empty($data['filter_manufacturer_id'])) {
+            $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+        }
+
+        $query = $this->db->query($sql);
+
+        return $query->row['total'];
     }
 }

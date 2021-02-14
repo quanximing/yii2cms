@@ -22,8 +22,13 @@ class ProductsController extends Controller
         $cate_id = (int)Yii::$app->request->get('cate_id');
         $manufacturer_id = (int)Yii::$app->request->get('manufacturer_id');
         $filter_filter =(int)Yii::$app->request->get('filter_filter');
+        $size=(int)Yii::$app->request->get('page_size')??10;
+        $page =(int)Yii::$app->request->get('page')??1;
+
         $display = Yii::$app->request->get('display');
-        $data =array('is_fx'=>1);
+        $data =array();
+        $data['start'] = $size*($page-1);
+        $data['limit'] =$size;
         if(!empty($manufacturer_id)){
             $data['filter_manufacturer_id']=$manufacturer_id;
         }
@@ -43,8 +48,8 @@ class ProductsController extends Controller
             }
         }
 
-        if($display == 'lists'){
-            return $this->render('products-lists', [
+        if($display == 'list'){
+            return $this->render('products-list', [
                 'data'=>$lists
             ]);
         }else{
