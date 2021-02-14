@@ -30,7 +30,7 @@ use yii\helpers\Url;
                                     <option value="4">All</option>
                                 </select>
                                 <!--Items counter-->
-                                <span>Showing all <strong>50</strong> of <strong>3,250</strong> items</span>
+                                <span>Showing all <strong><?=$pageSize?></strong> of <strong><?=$totalCount?></strong> items</span>
                             </div>
                             <div class="sort-options pull-right">
                                 <span class="hidden-xs">Sort by</span>
@@ -93,25 +93,10 @@ use yii\helpers\Url;
 
                         </div><!--/row-->
                         <!--Pagination-->
-                        <div class="pagination-wrapper">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <?= $this->render(
+                            'pagination.php',
+                            ['pages' => $pages, 'pageSize'=>$pageSize,]
+                        ) ?>
 
                     </div> <!--/product items-->
 

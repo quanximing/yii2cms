@@ -8,6 +8,7 @@
 namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
+use yii\data\Pagination;
 use frontend\models\Mproduct;
 use common\models\Manufacturer;
 use common\models\Category;
@@ -22,8 +23,8 @@ class ProductsController extends Controller
         $cate_id = (int)Yii::$app->request->get('cate_id');
         $manufacturer_id = (int)Yii::$app->request->get('manufacturer_id');
         $filter_filter =(int)Yii::$app->request->get('filter_filter');
-        $size=(int)Yii::$app->request->get('page_size')??10;
-        $page =(int)Yii::$app->request->get('page')??1;
+        $size=(int)(Yii::$app->request->get('page_size')??10);
+        $page =(int)(Yii::$app->request->get('page')??1);
 
         $display = Yii::$app->request->get('display');
         $data =array();
@@ -41,6 +42,7 @@ class ProductsController extends Controller
         }
         $products = new Mproduct();
         $lists =$products->getProducts($data);
+        $count= $products->getTotalProducts($data);
         foreach ($lists as $k => $value){
             $attributes = BproductAttribute::findAll(['product_id'=>$k]);
             foreach ($attributes as $v){
@@ -48,13 +50,20 @@ class ProductsController extends Controller
             }
         }
 
+        $pages = new Pagination(['totalCount' => $count,'pageSize' =>$size,]);
         if($display == 'list'){
             return $this->render('products-list', [
-                'data'=>$lists
+                'data'=>$lists,
+                'totalCount' => $count,
+                'pageSize'=>$size,
+                'pages' => $pages,
             ]);
         }else{
             return $this->render('products-grid', [
-                'data'=>$lists
+                'data'=>$lists,
+                'totalCount' => $count,
+                'pageSize'=>$size,
+                'pages' => $pages,
             ]);
         }
 

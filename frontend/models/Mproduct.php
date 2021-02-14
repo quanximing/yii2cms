@@ -405,8 +405,7 @@ class Mproduct extends Product
             $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
         }
 
-        $query = $this->db->query($sql);
-
-        return $query->row['total'];
+        $query =Yii::$app->db->createCommand($sql)->queryScalar();
+        return $query;
     }
 }
