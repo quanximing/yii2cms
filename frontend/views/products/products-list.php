@@ -27,7 +27,7 @@ use yii\helpers\Url;
                                     <option value="1">10</option>
                                     <option value="2">50</option>
                                     <option value="3">100</option>
-                                    <option value="4">All</option>
+                                    <option value="4"><?=$totalCount?></option>
                                 </select>
                                 <!--Items counter-->
                                 <span>Showing all <strong><?=$pageSize?></strong> of <strong><?=$totalCount?></strong> items</span>
@@ -43,8 +43,8 @@ use yii\helpers\Url;
                                 </select>
                                 <!--Grid-list view-->
                                 <span class="grid-list">
-                                    <a href="<?=Url::to(['products/index'])?>"><i class="fa fa-th-large"></i></a>
-                                    <a href="<?=Url::to(['products/index','display'=>'list'])?>"><i class="fa fa-align-justify"></i></a>
+                                     <a href="<?=Url::to(['products/index?'.Yii::$app->request->queryString.'&display='])?>"><i class="fa fa-th-large"></i></a>
+                                    <a href="<?=Url::to(['products/index?'.Yii::$app->request->queryString.'&display=list'])?>"><i class="fa fa-align-justify"></i></a>
                                     <a href="javascript:void(0);" class="toggle-filters-mobile"><i class="fa fa-search"></i></a>
                                 </span>
                             </div>

@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <!--Use class "navbar-fixed" or "navbar-default" -->
 <!--If you use "navbar-fixed" it will be sticky menu on scroll (only for large screens)-->
 
@@ -72,7 +75,7 @@
                     <li><a href="/">Home</a></li>
 
                     <li>
-                        <a href="category.html">Products<span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
+                        <a href="<?=Url::to(['/products/index'])?>">Products<span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
                         <div class="navbar-dropdown">
                             <div class="navbar-box">
 
@@ -99,7 +102,7 @@
                                             <!--icon item-->
                                             <?php foreach($product_cate as $k => $v){  ?>
                                                 <div class="col-sm-3 col-xs-6">
-                                                    <a href="javascript:void(0);">
+                                                    <a href="<?=Url::to(['/products/index','cate_id'=>$v->category_id])?>">
                                                         <figure>
                                                             <i class="<?=$v->categoryDescription->icon?>"></i>
                                                             <figcaption><?=$v->categoryDescription->name?></figcaption>

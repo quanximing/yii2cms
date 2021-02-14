@@ -10,7 +10,7 @@ use yii\widgets\LinkPager;
         'prevPageLabel' => false,
         'firstPageLabel' => '<span aria-hidden="true">&laquo;</span>', // 设置首页尾页按钮
         'lastPageLabel' => '<span aria-hidden="true">&raquo;</span>',
-        'hideOnSinglePage' => false, // 当你数据不足2页时,分页默认不显示,但你可以让他显示出来
+        'hideOnSinglePage' => true, // 当你数据不足2页时,分页默认不显示,但你可以让他显示出来
         'maxButtonCount' =>$pageSize,    // 分页 页码默认显示10页,不过你可以自由设置,比如显示5页
         'options' => ['class' => 'pagination'], // 可以给分页添加class 然你你想换个颜色,居个中啊
     ]); ?>

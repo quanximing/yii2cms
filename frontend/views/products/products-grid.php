@@ -27,7 +27,7 @@ use yii\helpers\Url;
                                     <option value="1">10</option>
                                     <option value="2">50</option>
                                     <option value="3">100</option>
-                                    <option value="4">All</option>
+                                    <option value="4"><?=$totalCount?></option>
                                 </select>
                                 <!--Items counter-->
                                 <span>Showing all <strong><?=$pageSize?></strong> of <strong><?=$totalCount?></strong> items</span>
