@@ -1,4 +1,6 @@
-
+<?php
+use yii\helpers\Url;
+?>
 <!-- ========================  Header content ======================== -->
 
 <section class="header-content">
@@ -42,7 +44,7 @@
 
             <!-- === icon item === -->
             <?php foreach($product_cate as $k => $v){  ?>
-                <a href="#">
+                <a href="<?=Url::to(['/products/index','cate_id'=>$v->category_id])?>">
                     <figure>
                         <i class="<?=$v->categoryDescription->icon?>"></i>
                         <figcaption><?=$v->categoryDescription->name?></figcaption>

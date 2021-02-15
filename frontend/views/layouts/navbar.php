@@ -83,13 +83,13 @@ use yii\helpers\Url;
 
                                 <div class="box-1">
                                     <div class="image">
-                                        <img src="assets/images/blog-2.jpg" alt="Lorem ipsum" />
+                                        <img src="/images/blog-2.jpg" alt="Lorem ipsum" />
                                     </div>
                                     <div class="box">
                                         <div class="h2">Best ideas</div>
                                         <div class="clearfix">
                                             <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
-                                            <a class="btn btn-clean btn-big" href="ideas.html">Explore</a>
+                                            <a class="btn btn-clean btn-big" href="/site/contact">Contact Us</a>
                                         </div>
                                     </div>
                                 </div> <!--/box-1-->
