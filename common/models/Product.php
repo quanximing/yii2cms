@@ -43,6 +43,7 @@ use common\models\ProductFilter;
  * @property int $pt_n_discount 拼团折扣比例  除以100
  * @property string $date_modified
  * @property int $is_fx 是否分销
+ * @property int $feature_home 推荐首页
  * @property int $sales_num 销量
  * @property string $commission 佣金比例
  * @property string $commission_extend 附加奖品
@@ -66,7 +67,7 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['model', 'sku', 'manufacturer_id', 'date_available', 'date_added'], 'required'],
-            [['quantity', 'stock_status_id', 'manufacturer_id', 'shipping', 'points', 'subtract', 'minimum', 'sort_order', 'status', 'viewed', 'is_pt', 'is_fx','sales_num'], 'integer'],
+            [['quantity', 'stock_status_id', 'manufacturer_id', 'shipping', 'points', 'subtract', 'minimum', 'sort_order', 'status', 'viewed', 'is_pt','feature_home', 'is_fx','sales_num'], 'integer'],
             [['price','pt_y_discount','pt_n_discount', 'commission'], 'number'],
             [['date_available', 'date_added', 'date_modified'], 'safe'],
             [['model', 'sku'], 'string', 'max' => 64],
@@ -107,6 +108,7 @@ class Product extends \yii\db\ActiveRecord
             'pt_n_discount' => '拼团年付折扣',
             'date_modified' => 'Date Modified',
             'is_fx' => 'Is FX',
+			'feature_home'=>'首页展示',
             'sales_num' => '销量',
             'commission' => 'Commission',
             'commission_extend' => 'Commission Extend',

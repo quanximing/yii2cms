@@ -55,7 +55,7 @@ use yii\helpers\Url;
 
             <!-- Setup your logo here-->
 
-            <a href="index.html" class="logo"><img src="/images/logo.png" alt="" /></a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt="" /></a>
 
             <!-- Mobile toggle menu -->
 
@@ -117,7 +117,7 @@ use yii\helpers\Url;
                         </div> <!--/navbar-dropdown-->
                     </li>
                     <!-- Simple menu link-->
-                    <li><a href="shortcodes.html">News</a></li>
+                    <li><a href="/site/news">News</a></li>
                     <li><a href="/site/about">About Us</a></li>
                     <li><a href="/site/contact">Contact Us</a></li>
                 </ul>

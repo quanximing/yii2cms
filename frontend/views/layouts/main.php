@@ -36,7 +36,7 @@ $product_cate = Category::find()->joinWith('categoryDescription')->andwhere(['to
     <!-- Meta tags -->
     <meta name="description" content="<?=\Yii::$app->params['website_description']?>">
     <meta name="author" content="<?=\Yii::$app->params['website_author']?>">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -163,7 +163,7 @@ $product_cate = Category::find()->joinWith('categoryDescription')->andwhere(['to
             <div class="footer-social">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="/20382155" target="_blank"><i class="fa fa-download"></i> Mobel</a> &nbsp; | <a href="#">Sitemap</a> &nbsp; | &nbsp; <a href="#">Privacy policy</a>
+                        <a href="/" target="_blank"><i class="fa fa-download"></i> Mobel</a> &nbsp; | <a href="#">Sitemap</a> &nbsp; | &nbsp; <a href="#">Privacy policy</a>
                     </div>
                     <div class="col-sm-6 links">
                         <ul>

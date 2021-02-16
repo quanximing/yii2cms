@@ -418,7 +418,7 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
                   </div>
               </div>
               <div class="form-group">
-                  <div class="col-sm-6">
+                  <div class="col-sm-4">
                       <?= $form->field($product, 'status')->radioList([0=>'停用',1=>'启用']) ?>
                   </div>
 <!--                  <div class="col-sm-6">-->
@@ -426,8 +426,11 @@ $this->registerJsFile('@web/js/csumernote.js',['depends'=>['backend\assets\AppAs
 <!--                  </div>-->
               </div>
               <div class="form-group">
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                       <?= $form->field($product, 'is_fx')->radioList([0=>'停用',1=>'启用']) ?>
+                  </div>
+                  <div class="col-sm-4">
+                      <?= $form->field($product, 'feature_home')->radioList([0=>'停用',1=>'启用']) ?>
                   </div>
               </div>
               <div class="form-group">
