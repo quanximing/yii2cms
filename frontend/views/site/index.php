@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'my website';
@@ -15,7 +15,8 @@ $this->title = 'my website';
     <div class="container">
 
         <!-- === header title === -->
-
+        <?php
+        if(!empty($data)){ ?>
         <header>
             <div class="row">
                 <div class="col-md-offset-2 col-md-8 text-center">
@@ -28,19 +29,15 @@ $this->title = 'my website';
         </header>
 
         <div class="row">
-
             <!-- === product-item === -->
-
+            <?php
+            foreach( $data as $k=>$value){
+            ?>
             <div class="col-md-4 col-xs-6">
-
                 <article>
                     <div class="info">
-                                <span class="add-favorite added">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
+                        <span class="add-favorite added"><a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a></span>
+                        <span><a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a></span>
                     </div>
                     <div class="btn btn-add">
                         <i class="icon icon-cart"></i>
@@ -48,186 +45,34 @@ $this->title = 'my website';
                     <div class="figure-grid">
                         <div class="image">
                             <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-1.png" alt="" width="360" />
+                                <img src="<?=\Yii::$app->params['image_url'].'/'.$value['image']?>" alt="" width="360" />
                             </a>
                         </div>
                         <div class="text">
-                            <h2 class="title h4"><a href="product.html">Green corner</a></h2>
-                            <sub>$ 1499,-</sub>
-                            <sup>$ 1099,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
+                            <h2 class="title h4"><a href="/"><?=$value['name']?></a></h2>
+                            <?php if(isset($value['special'])){ ?>
+                                <sub><?=$value['price']?></sub>
+                                <sup><?=$value['special']?></sup>
+                            <?php  }else{ ?>
+                                <sup><?=$value['price']?></sup>
+                            <?php }?>
+                            <span class="description clearfix"><?=$value['tag']?></span>
                         </div>
                     </div>
                 </article>
             </div>
-
-            <!-- === product-item === -->
-
-            <div class="col-md-4 col-xs-6">
-                <article>
-                    <div class="info">
-                                <span class="add-favorite">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
-                    </div>
-                    <div class="btn btn-add">
-                        <i class="icon icon-cart"></i>
-                    </div>
-                    <div class="figure-grid">
-                        <div class="image">
-                            <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-2.png" alt="" width="360" />
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2 class="title h4"><a href="product.html">Laura</a></h2>
-                            <sub>$ 3999,-</sub>
-                            <sup>$ 3499,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- === product-item === -->
-
-            <div class="col-md-4 col-xs-6">
-                <article>
-                    <div class="info">
-                                <span class="add-favorite">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
-                    </div>
-                    <div class="btn btn-add">
-                        <i class="icon icon-cart"></i>
-                    </div>
-                    <div class="figure-grid">
-                        <span class="label label-warning">New</span>
-                        <div class="image">
-                            <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-3.png" alt="" width="360" />
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2 class="title h4"><a href="product.html">Nude</a></h2>
-                            <sup>$ 2999,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- === product-item === -->
-
-            <div class="col-md-4 col-xs-6">
-                <article>
-                    <div class="info">
-                                <span class="add-favorite">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
-                    </div>
-                    <div class="btn btn-add">
-                        <i class="icon icon-cart"></i>
-                    </div>
-                    <div class="figure-grid">
-                        <div class="image">
-                            <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-4.png" alt="" width="360" />
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2 class="title h4"><a href="product.html">Aurora</a></h2>
-                            <sup>$ 299,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- === product-item === -->
-
-            <div class="col-md-4 col-xs-6">
-                <article>
-                    <div class="info">
-                                <span class="add-favorite added">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
-                    </div>
-                    <div class="btn btn-add">
-                        <i class="icon icon-cart"></i>
-                    </div>
-                    <div class="figure-grid">
-                        <span class="label label-info">-50%</span>
-                        <div class="image">
-                            <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-5.png" alt="" width="360" />
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2 class="title h4"><a href="product.html">Dining set</a></h2>
-                            <sub>$ 1999,-</sub>
-                            <sup>$ 1499,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- === product-item === -->
-
-            <div class="col-md-4 col-xs-6">
-                <article>
-                    <div class="info">
-                                <span class="add-favorite">
-                                    <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
-                                </span>
-                        <span>
-                                    <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
-                                </span>
-                    </div>
-                    <div class="btn btn-add">
-                        <i class="icon icon-cart"></i>
-                    </div>
-                    <div class="figure-grid">
-                        <div class="image">
-                            <a href="#productid1" class="mfp-open">
-                                <img src="/images/product-6.png" alt="" width="360" />
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2 class="title h4"><a href="product.html">Seat chair</a></h2>
-                            <sup>$ 896,-</sup>
-                            <span class="description clearfix">Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
+            <?php }   ?>
         </div> <!--/row-->
         <!-- === button more === -->
 
         <div class="wrapper-more">
-            <a href="products-grid.html" class="btn btn-main">View store</a>
+            <a href="<?=Url::to(['/products/index'])?>" class="btn btn-main">View more</a>
         </div>
 
         <!-- ========================  Product info popup - quick view ======================== -->
-
         <div class="popup-main mfp-hide" id="productid1">
 
             <!-- === product popup === -->
-
             <div class="product">
 
                 <!-- === popup-title === -->
@@ -313,6 +158,7 @@ $this->title = 'my website';
 
             </div> <!--/product-->
         </div> <!--popup-main-->
+        <?php  } ?>
     </div> <!--/container-->
 </section>
 
@@ -456,7 +302,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image">
                             <img src="/images/project-1.jpg" alt="" />
                         </div>
@@ -484,7 +330,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image">
                             <img src="/images/project-2.jpg" alt="" />
                         </div>
@@ -512,7 +358,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image">
                             <img src="/images/project-3.jpg" alt="" />
                         </div>
@@ -540,7 +386,7 @@ $this->title = 'my website';
         <!-- === button more === -->
 
         <div class="wrapper-more">
-            <a href="ideas.html" class="btn btn-main">View all posts</a>
+            <a href="#" class="btn btn-main">View all posts</a>
         </div>
 
     </div> <!--/container-->
@@ -588,7 +434,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image" style="background-image:url(/images/blog-1.jpg)">
                             <img src="/images/blog-1.jpg" alt="" />
                         </div>
@@ -615,7 +461,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image" style="background-image:url(/images/blog-2.jpg)">
                             <img src="/images/blog-1.jpg" alt="" />
                         </div>
@@ -642,7 +488,7 @@ $this->title = 'my website';
 
             <div class="col-sm-4">
                 <article>
-                    <a href="article.html">
+                    <a href="#">
                         <div class="image" style="background-image:url(/images/blog-8.jpg)">
                             <img src="/images/blog-8.jpg" alt="" />
                         </div>
@@ -669,7 +515,7 @@ $this->title = 'my website';
         <!-- === button more === -->
 
         <div class="wrapper-more">
-            <a href="blog-grid.html" class="btn btn-main">View all posts</a>
+            <a href="#" class="btn btn-main">View all posts</a>
         </div>
 
     </div> <!--/container-->

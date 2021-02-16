@@ -141,7 +141,9 @@ class Mproduct extends Product
         if (!empty($data['filter_manufacturer_id'])) {
             $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
         }
-
+        if (!empty($data['feature_home'])) {
+            $sql .= " AND p.feature_home = '" . (int)$data['feature_home'] . "'";
+        }
         $sql .= " GROUP BY p.product_id";
 
         $sort_data = array(

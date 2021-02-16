@@ -14,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Mproduct;
 use common\models\BannerImage;
 /**
  * Site controller
@@ -74,8 +75,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
-        return $this->render('index',[]);
+        $data =array();
+        $data['feature_home']=1;
+        $products = new Mproduct();
+        $lists =$products->getProducts($data);
+        return $this->render('index',['data'=>$lists]);
     }
 
     /**
