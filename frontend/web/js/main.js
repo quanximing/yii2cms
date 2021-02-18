@@ -143,8 +143,30 @@
     // Main popup
     // ----------------------------------------------------------------
 
-    $('.mfp-open').magnificPopup({
+ /*  $('.mfp-open').magnificPopup({
         type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        callbacks: {
+            open: function () {
+                // wait on popup initalization
+                // then load owl-carousel
+                $('.popup-main .owl-carousel').hide();
+                setTimeout(function () {
+                    $('.popup-main .owl-carousel').slideDown();
+                }, 500);
+            }
+        }
+    });*/
+
+    $('.mfp-open').magnificPopup({
+        type: 'ajax',
         fixedContentPos: false,
         fixedBgPos: true,
         overflowY: 'auto',
