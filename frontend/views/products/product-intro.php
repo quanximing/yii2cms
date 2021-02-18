@@ -1,15 +1,24 @@
+<?php
+/**
+ * @var $product_img
+ * @var $product
+ */
+ //var_dump($product);
+?>
 <div class="popup-main " id="productid1">
     <div class="product">
     <!-- === popup-title === -->
     <div class="popup-title">
-        <div class="h1 title">Laura <small>product category</small></div>
+        <div class="h1 title"><?=$product['name']?><small>product category</small></div>
     </div>
     <!-- === product gallery === -->
     <div class="owl-product-gallery">
-        <img src="/images/product-1.png" alt="" width="640" />
-        <img src="/images/product-2.png" alt="" width="640" />
-        <img src="/images/product-3.png" alt="" width="640" />
-        <img src="/images/product-4.png" alt="" width="640" />
+        <?php
+        foreach ($product_img as $value){
+        ?>
+        <img src="<?=\Yii::$app->params['image_url'].'/'.$value['image'] ?>" alt="" width="640" />
+
+        <?php } ?>
     </div>
     <!-- === product-popup-info === -->
     <div class="popup-content">
@@ -18,8 +27,8 @@
                 <!-- === left-column === -->
                 <div class="col-sm-6">
                     <div class="info-box">
-                        <strong>Maifacturer</strong>
-                        <span>Brand name</span>
+                        <strong>Manufacturer</strong>
+                        <span><?=$product['manufacturer']?></span>
                     </div>
                     <div class="info-box">
                         <strong>Materials</strong>
@@ -60,7 +69,14 @@
     <div class="popup-table">
         <div class="popup-cell">
             <div class="price">
-                <span class="h3">$ 1999,00 <small>$ 2999,00</small></span>
+                <span class="h3">
+                    <?php if(!empty($product['special'])){ ?>
+                       $ <?=$product['special']?> <small>$ <?=$product['price']?></small>
+                    <?php }else{ ?>
+                        $ <?=$product['price']?>
+                    <?php }?>
+
+                </span>
             </div>
         </div>
         <div class="popup-cell">

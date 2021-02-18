@@ -183,6 +183,32 @@
                 setTimeout(function () {
                     $('.popup-main .owl-carousel').slideDown();
                 }, 500);
+            },
+            parseAjax: function(mfpResponse) {
+                // mfpResponse.data is a "data" object from ajax "success" callback
+                // for simple HTML file, it will be just String
+                // You may modify it to change contents of the popup
+                // For example, to show just #some-element:
+                // mfpResponse.data = $(mfpResponse.data).find('#some-element');
+
+                // mfpResponse.data must be a String or a DOM (jQuery) element
+
+               // console.log('Ajax content loaded:', mfpResponse);
+            },
+            ajaxContentAdded: function() {
+                //Product slider
+                $.each($(".owl-product-gallery"), function (i, n) {
+                    $(n).owlCarousel({
+                        //transitionStyle: "fadeUp",
+                        autoHeight: true,
+                        slideSpeed: 800,
+                        navigation: true,
+                        navigationText: arrowIcons,
+                        pagination: true,
+                        items: 1,
+                        singleItem: true
+                    });
+                });
             }
         }
     });

@@ -80,7 +80,7 @@ class ProductsController extends Controller
         $product_img = '';
         $products = new Mproduct();
         if(!empty($product_id)){
-            $product =$products->getProducts($product_id);
+            $product =$products->getProduct($product_id);
             $product_img =$products->getProductImages($product_id);
         }
 
