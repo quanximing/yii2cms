@@ -9,7 +9,7 @@
     <div class="product">
     <!-- === popup-title === -->
     <div class="popup-title">
-        <div class="h1 title"><?=$product['name']?><small>product category</small></div>
+        <div class="h1 title"><?=$product['name']?><small><?=$product['tag']?>></small></div>
     </div>
     <!-- === product gallery === -->
     <div class="owl-product-gallery">

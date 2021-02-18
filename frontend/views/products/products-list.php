@@ -64,7 +64,7 @@ use yii\helpers\Url;
                                             <a href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list"><i class="icon icon-heart"></i></a>
                                         </span>
                                         <span>
-                                            <a href="#productid1" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
+                                            <a href="<?=Url::to(['/products/product-intro?product_id='.$value['product_id']])?>" class="mfp-open" data-title="Quick wiew"><i class="icon icon-eye"></i></a>
                                         </span>
                                     </div>
                                     <div class="btn btn-add">
@@ -72,7 +72,7 @@ use yii\helpers\Url;
                                     </div>
                                     <div class="figure-list">
                                         <div class="image">
-                                            <a href="#productid1" class="mfp-open">
+                                            <a href="<?=Url::to(['/products/product-intro?product_id='.$value['product_id']])?>" class="mfp-open">
                                                 <img src="<?=\Yii::$app->params['image_url'].'/'.$value['image']?>" alt="" width="360" />
                                             </a>
                                         </div>
